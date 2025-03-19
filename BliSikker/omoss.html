@@ -3,18 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bli Sikker</title>
-    <link rel="stylesheet" href="Hjem.css">
-    <script src="Hjem.js"></script>
+    <title>Om oss - Bli Sikker</title>
+    <link rel="stylesheet" href="omoss/Omoss.css">
+    <script src="omoss/Omoss.js"></script>
     <style>
-        body {
-            background-color: #f4f4f4; /* Beholder bakgrunnsfargen */
+        .about-section .container {
+            position: relative;
+            margin: 0 auto;
+            max-width: 70%;
+            padding: 30px;
+            text-align: left;
+        }
+        .team-container, .testimonials, .faq, .history, .cta {
+            margin-top: 50px;
+        }
+        .team-member, .testimonial, .faq-item {
+            margin-bottom: 20px;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #a671d3;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .cta-btn:hover {
+            background-color: #8b5ab2;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="c:\Users\Kim Nguyen\Desktop\BliSikker\BliSikker\Hjem\BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="logo">
+        <img src="omoss/BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="logo">
         <nav>
             <ul>
                 <li><a href="#">Hjem</a></li>
@@ -25,16 +47,43 @@
                 <li><a href="../Registrer/logginn.php">Logg inn</a></li>
             </ul>
         </nav>
-        <label class="toggle-switch">
-            <input type="checkbox" id="mode-toggle">
-            <span class="slider"></span>
-        </label>
     </header>
+    
+    <section class="about-section">
+        <div class="container">
+            <h1>Om oss</h1>
+            <h2>Vår historie</h2>
+            <p><strong>Bli Sikker!</strong> startet som en idé blant fire nyutdannede studenter tidlig på 2000-tallet. Med bakgrunn i IT, økonomi, design og pedagogikk, opplevde de utfordringene med å finne gode utdanningsmuligheter uten høye kostnader og strenge opptakskrav. Etter år med eksperimentering og vekst ble Bli Sikker! en realitet – en plattform for fleksibel og rimelig utdanning.</p>
+            
+            <h2>Vårt team</h2>
+            <div class="team-container">
+                <div class="team-member"><strong>🎓 Emma Larsen</strong> – Teknisk leder (ekspert på e-læringsplattformer)</div>
+                <div class="team-member"><strong>📊 Jonas Eriksen</strong> – Økonomiansvarlig (sikrer rimelige kurs)</div>
+                <div class="team-member"><strong>🎨 Sofia Nguyen</strong> – Designer (brukervennlige løsninger)</div>
+            </div>
+            
+            <h2>Kundeuttalelser</h2>
+            <div class="testimonials">
+                <div class="testimonial">“Bli Sikker! hjalp meg å bytte karriere. Fleksible kurs og dyktige lærere!” – *Anders, tidligere student*</div>
+                <div class="testimonial">“Fantastiske kurs! Jeg fikk raskt en sertifisering som hjalp meg i jobbmarkedet.” – *Maria, deltaker*</div>
+            </div>
+            
+            <h2>Ofte stilte spørsmål</h2>
+            <div class="faq">
+                <div class="faq-item"><strong>Er kursene godkjent av arbeidsgivere?</strong><br>Ja, våre sertifiseringer er anerkjent i bransjen.</div>
+                <div class="faq-item"><strong>Hvor mye koster et kurs?</strong><br>Prisene varierer, men vi tilbyr gratis prøvekurs og fleksible betalingsplaner.</div>
+            </div>
+            
+            <h2>Bli med i dag!</h2>
+            <div class="cta">
+                <a href="../Registrer/Registrering.html" class="cta-btn">Bli med nå</a>
+            </div>
+        </div>
+    </section>
     
     <footer>
         <p>&copy; 2025 Bli Sikker. Alle rettigheter reservert.</p>
     </footer>
 </body>
 </html>
-
 
