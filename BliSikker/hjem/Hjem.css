@@ -571,6 +571,51 @@ h2 {
     color: #ddd;
 }
 
+.dark-mode .bli-sikker-hero {
+    background-color: #1a1a1a; /* Mørk bakgrunn */
+    color: white;
+}
+
+.dark-mode .feature {
+    background-color: #333; /* Mørk grå kort */
+    color: white;
+    border: 1px solid #444; /* Diskré kant */
+}
+
+.dark-mode .feature-text p{
+    color: white;
+}
+
+.dark-mode .feature-icon {
+    filter: brightness(0.9);
+}
+
+.dark-mode .subject-container{
+    background-color: #444;
+
+}
+
+.dark-mode .subject-card {
+    background-color: #333; /* Mørke kort */
+    color: white;
+    border: 1px solid #444;
+}
+
+
+.dark-mode .step-content{
+    background-color: #444;
+    color: white;
+    border-color: #aaa;
+}
+
+.dark-mode .step {
+    background-color: #444;
+    color: white;
+}
+
+.dark-mode .step-content img{
+    filter: brightness(0.85);
+}
 
 .dark-mode .hero h1, .dark-mode .hero p {
     color: white;
@@ -605,14 +650,53 @@ h2 {
 }
 
 /* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #a671d3;
+.footer {
+    background-color: #a865c9; /* Lilla bakgrunn */
+    padding: 40px 20px;
     color: white;
-    margin-top: 50px;
-    transition: background-color 0.3s;
+    font-family: Arial, sans-serif;
 }
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    text-align: left;
+    padding: 0 15px;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.footer-logo {
+    height: 80px; /* Øker størrelsen for bedre synlighet */
+    margin-bottom: 15px;
+    filter: brightness(0) invert(1); /* Gjør logoen hvit for bedre kontrast */
+}
+
+
 
 /* Responsiv design */
 @media (max-width: 768px) {
