@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="no">
 <head>
@@ -9,28 +10,10 @@
     <style>
         .about-section .container {
             position: relative;
-            margin: 0 auto;
-            max-width: 70%;
-            padding: 30px;
-            text-align: left;
-        }
-        .team-container, .testimonials, .faq, .history, .cta {
-            margin-top: 50px;
-        }
-        .team-member, .testimonial, .faq-item {
-            margin-bottom: 20px;
-        }
-        .cta-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #a671d3;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .cta-btn:hover {
-            background-color: #8b5ab2;
+            margin: 0 auto; /* Sentrerer innholdet horisontalt */
+            max-width: 70%; /* Begrenser bredden for bedre lesbarhet */
+            padding: 30px; /* Legger til mer luft rundt teksten */
+            text-align: left; /* Sørger for at teksten ikke blir for spredt */
         }
     </style>
 </head>
@@ -47,37 +30,38 @@
                 <li><a href="../Registrer/logginn.php">Logg inn</a></li>
             </ul>
         </nav>
+        <label class="toggle-switch">
+            <input type="checkbox" id="mode-toggle">
+            <span class="slider"></span>
+        </label>
     </header>
     
     <section class="about-section">
         <div class="container">
             <h1>Om oss</h1>
-            <h2>Vår historie</h2>
-            <p><strong>Bli Sikker!</strong> startet som en idé blant fire nyutdannede studenter tidlig på 2000-tallet. Med bakgrunn i IT, økonomi, design og pedagogikk, opplevde de utfordringene med å finne gode utdanningsmuligheter uten høye kostnader og strenge opptakskrav. Etter år med eksperimentering og vekst ble Bli Sikker! en realitet – en plattform for fleksibel og rimelig utdanning.</p>
+            <p><strong>Velkommen til Bli Sikker!</strong> – en læringsplattform skapt av ambisiøse, nyutdannede studenter med en drøm om å gjøre utdanning tilgjengelig for alle. Vår reise startet tidlig på 2000-tallet, da en gruppe venner med ulike akademiske bakgrunner innså hvor utfordrende det var for mange å få plass på studier, skaffe seg kompetanseheving eller rett og slett finne den rette utdanningen.</p>
             
-            <h2>Vårt team</h2>
-            <div class="team-container">
-                <div class="team-member"><strong>🎓 Emma Larsen</strong> – Teknisk leder (ekspert på e-læringsplattformer)</div>
-                <div class="team-member"><strong>📊 Jonas Eriksen</strong> – Økonomiansvarlig (sikrer rimelige kurs)</div>
-                <div class="team-member"><strong>🎨 Sofia Nguyen</strong> – Designer (brukervennlige løsninger)</div>
-            </div>
+            <h2>Fra idé til virkelighet</h2>
+            <p>Det hele begynte i et lite, trangt kontor delt mellom fire venner – en programmerer, en økonom, en designer og en pedagog. De kom fra ulike studieretninger, men delte én felles frustrasjon: utdanning var for mange for dyrt, for utilgjengelig og altfor begrenset av opptakskrav og formaliteter.</p>
             
-            <h2>Kundeuttalelser</h2>
-            <div class="testimonials">
-                <div class="testimonial">“Bli Sikker! hjalp meg å bytte karriere. Fleksible kurs og dyktige lærere!” – *Anders, tidligere student*</div>
-                <div class="testimonial">“Fantastiske kurs! Jeg fikk raskt en sertifisering som hjalp meg i jobbmarkedet.” – *Maria, deltaker*</div>
-            </div>
+            <p>De så en voksende trend i nettbasert læring, men fant at de fleste kursene som fantes enten var overfladiske eller manglet den praktiske relevansen som arbeidslivet krevde. De bestemte seg for å bygge en plattform der alle – uavhengig av bakgrunn – kunne få tilgang til kvalitetssikret utdanning, enten for å skaffe seg nye ferdigheter, få en sertifisering eller rett og slett lære noe nytt.</p>
             
-            <h2>Ofte stilte spørsmål</h2>
-            <div class="faq">
-                <div class="faq-item"><strong>Er kursene godkjent av arbeidsgivere?</strong><br>Ja, våre sertifiseringer er anerkjent i bransjen.</div>
-                <div class="faq-item"><strong>Hvor mye koster et kurs?</strong><br>Prisene varierer, men vi tilbyr gratis prøvekurs og fleksible betalingsplaner.</div>
-            </div>
+            <p>I begynnelsen underviste de selv, skapte læremateriell og testet ulike undervisningsformer. Med tiden vokste både plattformen og nettverket, og de tiltrakk seg flere eksperter fra ulike fagfelt som delte deres visjon. Sakte men sikkert ble drømmen til realitet – <strong>Bli Sikker!</strong> var født.</p>
             
-            <h2>Bli med i dag!</h2>
-            <div class="cta">
-                <a href="../Registrer/Registrering.html" class="cta-btn">Bli med nå</a>
-            </div>
+            <h2>Hva vi tilbyr</h2>
+            <p>I dag er Bli Sikker! en ledende plattform for fleksibel utdanning. Vi tilbyr en rekke kurs og sertifiseringsprogrammer innenfor ulike fagfelt, alt fra IT og programmering til økonomi, design og helse.</p>
+            
+            <ul>
+                <li>📚 Et bredt utvalg av fagområder – fra praktiske ferdigheter til akademiske studier.</li>
+                <li>🎓 Offisielle sertifiseringer som hjelper deg i jobbmarkedet.</li>
+                <li>🖥️ Full fleksibilitet – studer i ditt eget tempo, hvor som helst.</li>
+                <li>👨‍🏫 Erfarne instruktører med ekte bransjekunnskap.</li>
+            </ul>
+            
+            <h2>Vår visjon</h2>
+            <p>Vi tror på en fremtid hvor utdanning ikke er begrenset av økonomiske hindre eller opptakskrav. Vårt mål er å gi alle en sjanse til å bygge sin karriere, uansett hvor de kommer fra eller hvilken vei de har fulgt tidligere. Enten du ikke kom inn på studiet du ønsket, ønsker en raskere vei til ny kunnskap, eller bare vil lære noe nytt på fritiden – <strong>Bli Sikker!</strong> er her for deg.</p>
+            
+            <p>Vår reise startet med en enkel idé, og i dag hjelper vi tusenvis av studenter med å oppnå sine utdanningsmål. Og dette er bare begynnelsen.</p>
         </div>
     </section>
     
@@ -86,4 +70,3 @@
     </footer>
 </body>
 </html>
-
