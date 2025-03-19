@@ -1,0 +1,197 @@
+/* Resetting common styles */
+body, h1, h2, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styling */
+body {
+    background-color: #f4f1fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar styling */
+header {
+    background-color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+header .logo {
+    max-width: 120px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #a671d3;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #4B0082;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Dark mode */
+.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode header {
+    background-color: #333333c1;
+}
+
+.dark-mode nav ul li a {
+    color:white;
+}
+
+.dark-mode .course-card {
+    background-color: #313131;
+}
+
+.btn {
+    background-color: #a671d3;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #8d42ce;
+}
+
+.toggle-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #a671d3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.toggle-button:hover {
+    background-color: #8b5ab2;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ddd;
+    border-radius: 40px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 34px;
+    width: 34px;
+    left: 3px;
+    bottom: 3px;
+    background: url('sunIcon.png') center/cover no-repeat;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #4B0082;
+}
+
+input:checked + .slider:before {
+    transform: translateX(38px); /* Justert for ny bredde */
+    background: url('sunPurple.png') center/cover no-repeat;
+    background-color: #4B0082;
+    border-radius: 50%;
+}
+
+/* Container and course card styling */
+.container {
+    padding: 20px;
+}
+
+.course-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Button styling */
+.button, .logout {
+    background-color: #6a0dad;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.button:hover, .logout:hover {
+    background-color: #4f0b9c;
+}
+
+/* Logout link specific styling */
+.logout {
+    color: #6a0dad;
+    text-decoration: none;
+    color: white;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #a671d3;
+    color: white;
+    margin-top: 50px;
+    transition: background-color 0.3s;
+}
+
