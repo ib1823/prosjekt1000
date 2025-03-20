@@ -1,0 +1,179 @@
+/* Generelle stiler */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Navigasjonsbar */
+header {
+    background-color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.logo {
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #a671d3;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #4B0082;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Pris-seksjon */
+.pris-seksjon {
+    margin: 50px auto;
+}
+
+.pris-toggle {
+    display: inline-flex;
+    background-color: #ddd;
+    padding: 5px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.pris-toggle button {
+    background: none;
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.toggle-aktiv {
+    background-color: #000;
+    color: #fff;
+    border-radius: 15px;
+}
+
+/* Pris-kort */
+.pris-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.pris-kort {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pris-kort h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.pris {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.pris strong {
+    font-size: 40px;
+}
+
+ul {
+    list-style-type: disc;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.pris-kort.lys {
+    background-color: #fce4ec;
+    color: #000;
+}
+
+.pris-kort.mørk {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Knapp */
+.knapp {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: auto;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.knapp.mørk {
+    background-color: #000;
+    color: #fff;
+}
+.knapp.mørk:hover {
+    background-color: #4B0082;
+    color: #fff;
+}
+
+.knapp.lys {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+.knapp.lys:hover {
+    background-color: #4B0082;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #a671d3;
+    color: white;
+    margin-top: 50px;
+    transition: background-color 0.3s;
+}
+
+/* Responsiv design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
