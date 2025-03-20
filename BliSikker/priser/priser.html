@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priser - Bli Sikker</title>
+    <link rel="stylesheet" href="priser.css">
+</head>
+<body>
+    <header>
+        <img src="BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#">Hjem</a></li>
+                <li><a href="#">Kurs</a></li>
+                <li><a href="#">Om oss</a></li>
+                <li><a href="#">Priser</a></li>
+                <li><a href="../Registrer/Registrering.html">Opprett bruker</a></li>
+                <li><a href="../Registrer/logginn.php">Logg inn</a></li>
+            </ul>
+        </nav>
+        <label class="toggle-switch">
+            <input type="checkbox" id="mode-toggle">
+            <span class="slider"></span>
+        </label>
+    </header>
+
+    <section class="pris-seksjon">
+        <div class="pris-toggle">
+            <button class="toggle-aktiv">Månedlig</button>
+            <button>Årlig</button>
+        </div>
+
+        <div class="pris-container">
+            <div class="pris-kort lys">
+                <h3>Personlig</h3>
+                <p class="pris"><strong>50</strong> kr / mnd</p>
+                <ul>
+                    <li>Tilgang til 12 000+ kurs</li>
+                    <li>Sertifiseringsforberedelse</li>
+                    <li>Målbaserte anbefalinger</li>
+                    <li>AI-drevne kodeøvelser</li>
+                </ul>
+                <button class="knapp mørk">Velg</button>
+            </div>
+
+            <div class="pris-kort mørk">
+                <h3>Team</h3>
+                <p class="pris"><strong>250</strong> kr / mnd</p>
+                <ul>
+                    <li>Tilgang til 12 000+ kurs</li>
+                    <li>Sertifiseringsforberedelse</li>
+                    <li>Målbaserte anbefalinger</li>
+                    <li>AI-drevne kodeøvelser</li>
+                    <li>Analyse og innsiktsrapporter</li>
+                </ul>
+                <button class="knapp lys">Velg</button>
+            </div>
+
+            <div class="pris-kort lys">
+                <h3>Bedrift</h3>
+                <p class="pris"><strong>500</strong> kr / mnd</p>
+                <ul>
+                    <li>Tilgang til 27 000+ kurs</li>
+                    <li>Sertifiseringsforberedelse</li>
+                    <li>Målbaserte anbefalinger</li>
+                    <li>AI-drevne kodeøvelser</li>
+                    <li>Avanserte analyser og innsikt</li>
+                    <li>Dedikert kundesupport</li>
+                </ul>
+                <button class="knapp mørk">Be om demo</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Bli Sikker. Alle rettigheter reservert.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const bryter = document.getElementById("modus-bryter");
+            bryter.addEventListener("change", function () {
+                document.body.classList.toggle("mørk-modus");
+            });
+        });
+    </script>
+</body>
+</html>
