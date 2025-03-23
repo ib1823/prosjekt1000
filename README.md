@@ -1,2 +1,0 @@
-dette blir blisikker
-dette 

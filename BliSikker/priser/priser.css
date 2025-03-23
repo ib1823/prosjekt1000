@@ -1,0 +1,844 @@
+/* Generelle stiler */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f1fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Navigasjonsbar */
+header {
+    background-color: white;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    max-width: 120px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #a671d3;
+    font-weight: bold;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #4B0082;
+    color: white;
+}
+
+/* Dark mode toggle */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ddd;
+    border-radius: 30px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+    background: white url('sunIcon.png') center/cover no-repeat;
+}
+
+input:checked + .slider {
+    background-color: #4B0082;
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+    background-color: white;
+    background: white url('moonIcon.png') center/cover no-repeat;
+}
+
+/* Pris-header */
+.pris-header {
+    text-align: center;
+    padding: 60px 20px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.pris-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.pris-header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Pris-planer */
+.pris-planer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+.pris-kort {
+    background-color: white;
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pris-kort:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pris-kort.solv {
+    background-color: #f5f5f5;
+}
+
+.pris-kort.gull {
+    background-color: #fffbe6;
+    transform: scale(1.05);
+}
+
+.pris-kort.gull:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.pris-kort.diamant {
+    background-color: #f0f8ff;
+}
+
+.populaer-merke {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #a671d3;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.pris-kort h2 {
+    font-size: 1.8rem;
+    margin: 0 0 15px;
+    color: #333;
+}
+
+.pris-kort.gull h2 {
+    margin-top: 20px;
+}
+
+.beskrivelse {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 25px;
+    min-height: 60px;
+}
+
+.pris {
+    margin: 25px 0;
+    text-align: center;
+}
+
+.belop {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.periode {
+    font-size: 1rem;
+    color: #666;
+}
+
+.fordeler {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 30px;
+}
+
+.fordeler li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
+.fordeler li:last-child {
+    border-bottom: none;
+}
+
+.fordeler li i {
+    position: absolute;
+    left: 0;
+    top: 12px;
+    color: #a671d3;
+}
+
+.fordeler li.ikke-inkludert {
+    color: #999;
+}
+
+.fordeler li.ikke-inkludert i {
+    color: #ccc;
+}
+
+.kom-i-gang {
+    display: block;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.kom-i-gang:hover {
+    background-color: #4B0082;
+}
+
+.pris-kort.gull .kom-i-gang {
+    background-color: #a671d3;
+}
+
+.pris-kort.gull .kom-i-gang:hover {
+    background-color: #8d42ce;
+}
+
+/* Forbedrede stiler for sammenligningstabell */
+.sammenligning-seksjon {
+    padding: 70px 20px;
+    background-color: #f9f6ff;
+    text-align: center;
+}
+
+.sammenligning-seksjon h2 {
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2.2rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.sammenligning-seksjon h2:after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #a671d3;
+}
+
+.tabell-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background-color: white;
+}
+
+.sammenligning-tabell {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 0;
+    table-layout: fixed;
+}
+
+.sammenligning-tabell .feature-col {
+    width: 30%;
+    text-align: left;
+    padding-left: 25px;
+}
+
+.sammenligning-tabell .plan-col {
+    width: 23.33%;
+    text-align: center;
+}
+
+.sammenligning-tabell th,
+.sammenligning-tabell td {
+    padding: 18px 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.sammenligning-tabell th {
+    background-color: #a671d3;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sammenligning-tabell th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.sammenligning-tabell th:last-child {
+    border-top-right-radius: 12px;
+}
+
+.sammenligning-tabell tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+.sammenligning-tabell tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+.sammenligning-tabell tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.sammenligning-tabell tr:hover {
+    background-color: #f0e6ff;
+}
+
+.sammenligning-tabell td.feature-col {
+    font-weight: 600;
+    color: #333;
+}
+
+.plan-value {
+    display: inline-block;
+    font-weight: 500;
+    padding: 5px 0;
+}
+
+.plan-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.plan-icon .fa-check {
+    color: white;
+    background-color: #a671d3;
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.plan-icon .fa-times {
+    color: #999;
+    font-size: 1.2rem;
+}
+
+/* FAQ seksjon forbedringer */
+.faq-seksjon {
+    padding: 60px 20px;
+    background-color: #f4f1fa;
+    text-align: center;
+}
+
+.faq-seksjon h2 {
+    margin-bottom: 40px;
+    color: #333;
+    font-size: 2rem;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #f9f6ff;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.faq-question i {
+    color: #a671d3;
+    transition: transform 0.3s;
+    font-size: 1.1rem;
+}
+
+.faq-question.active {
+    border-bottom-color: #eee;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+.faq-answer.active {
+    padding: 20px;
+    max-height: 300px;
+}
+
+.faq-answer p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Call to action */
+.call-to-action {
+    padding: 80px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #a671d3 0%, #6A0DAD 100%);
+    color: white;
+}
+
+.call-to-action h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.call-to-action p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.call-to-action .kom-i-gang {
+    background-color: white;
+    color: #a671d3;
+    padding: 15px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.call-to-action .kom-i-gang:hover {
+    background-color: #f0f0f0;
+}
+
+.call-to-action .be-om-demo {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.call-to-action .be-om-demo:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 20px 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+}
+
+.footer-logo {
+    height: 60px;
+    margin-bottom: 15px;
+    filter: brightness(0) invert(1);
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.footer-section a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode */
+.dark-mode {
+    background-color: #222;
+    color: #eee;
+}
+
+.dark-mode header {
+    background-color: #333;
+}
+
+.dark-mode .pris-header h1 {
+    color: #eee;
+}
+
+.dark-mode .pris-header p {
+    color: #ccc;
+}
+
+.dark-mode .pris-kort {
+    background-color: #333;
+    border-color: #444;
+}
+
+.dark-mode .pris-kort.solv {
+    background-color: #2a2a2a;
+}
+
+.dark-mode .pris-kort.gull {
+    background-color: #333326;
+}
+
+.dark-mode .pris-kort.diamant {
+    background-color: #253040;
+}
+
+.dark-mode .pris-kort h2,
+.dark-mode .belop {
+    color: #eee;
+}
+
+.dark-mode .beskrivelse,
+.dark-mode .periode {
+    color: #bbb;
+}
+
+.dark-mode .fordeler li {
+    color: #ddd;
+    border-color: #444;
+}
+
+.dark-mode .fordeler li.ikke-inkludert {
+    color: #999;
+}
+
+.dark-mode .fordeler li.ikke-inkludert i {
+    color: #666;
+}
+
+/* Mørk modus tilpasninger for sammenligningstabell */
+.dark-mode .sammenligning-seksjon {
+    background-color: #222;
+}
+
+.dark-mode .sammenligning-seksjon h2 {
+    color: #eee;
+}
+
+.dark-mode .tabell-container {
+    background-color: #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .sammenligning-tabell th {
+    background-color: #4B0082;
+    color: white;
+}
+
+.dark-mode .sammenligning-tabell tr:nth-child(even) {
+    background-color: #3a3a3a;
+}
+
+.dark-mode .sammenligning-tabell tr:hover {
+    background-color: #444;
+}
+
+.dark-mode .sammenligning-tabell td, 
+.dark-mode .sammenligning-tabell th {
+    border-color: #444;
+}
+
+.dark-mode .sammenligning-tabell td.feature-col {
+    color: #ddd;
+}
+
+.dark-mode .plan-value {
+    color: #ccc;
+}
+
+.dark-mode .plan-icon .fa-times {
+    color: #777;
+}
+
+.dark-mode .faq-seksjon {
+    background-color: #222;
+}
+
+.dark-mode .faq-item,
+.dark-mode .faq-answer {
+    background-color: #333;
+}
+
+.dark-mode .faq-question:hover {
+    background-color: #3a3a3a;
+}
+
+.dark-mode .faq-question h3 {
+    color: #eee;
+}
+
+.dark-mode .faq-answer p {
+    color: #ccc;
+}
+
+.dark-mode .faq-question.active {
+    border-bottom-color: #444;
+}
+
+/* Responsiv design */
+@media (max-width: 992px) {
+    .pris-kort {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+    
+    .pris-header h1 {
+        font-size: 2rem;
+    }
+    
+    .pris-header p {
+        font-size: 1rem;
+    }
+    
+    .pris-planer {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pris-kort {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 20px;
+    }
+    
+    .pris-kort.gull {
+        transform: none;
+    }
+    
+    .pris-kort.gull:hover {
+        transform: translateY(-10px);
+    }
+    
+    .call-to-action h2 {
+        font-size: 1.6rem;
+    }
+    
+    .call-to-action p {
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Responsiv design for tabellen */
+    .sammenligning-seksjon h2 {
+        font-size: 1.8rem;
+    }
+    
+    .sammenligning-tabell .feature-col,
+    .sammenligning-tabell .plan-col {
+        width: auto;
+    }
+    
+    .sammenligning-tabell th, 
+    .sammenligning-tabell td {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+    }
+    
+    .sammenligning-tabell td.feature-col {
+        position: sticky;
+        left: 0;
+        background-color: inherit;
+        z-index: 1;
+        border-right: 1px solid #eee;
+    }
+    
+    .dark-mode .sammenligning-tabell td.feature-col {
+        border-right-color: #444;
+    }
+    
+    .sammenligning-tabell th {
+        position: sticky;
+        top: 0;
+        z-index: 2;
+    }
+    
+    .sammenligning-tabell th.feature-col {
+        z-index: 3;
+    }
+}
