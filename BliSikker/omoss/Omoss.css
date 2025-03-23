@@ -9,6 +9,14 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+.about-section .container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 70%;
+    padding: 30px;
+    text-align: left;
+    left: 10px; /* Flytt 10px til høyre */
+}
 .toggle-switch {
     position: relative;
     display: inline-block;
