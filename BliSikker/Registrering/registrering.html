@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrer Deg</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .register-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .register-container h2 {
+            margin-bottom: 20px;
+            color: #388e3c; /* Grønn farge for overskriften */
+        }
+        .register-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .register-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50; /* Grønn farge for registrer deg-knappen */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .register-container button:hover {
+            background-color: #45a049; /* Mørkere grønn ved hover */
+        }
+        .register-container .login-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #388e3c; /* Grønn farge for logg inn-lenken */
+            text-decoration: none;
+        }
+        .register-container .login-link:hover {
+            text-decoration: underline;
+        }
+        .logo {
+            width: 150px; /* Juster størrelsen på logoen etter behov */
+            margin-bottom: 20px; /* Avstand mellom logoen og registreringsskjemaet */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-container">
+        <!-- Logo lagt til her -->
+        <img src="BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="logo">
+        
+        <h2>Registrer Deg</h2>
+        <form action="/register" method="POST">
+            <input type="text" name="fullname" placeholder="Fullt Navn" required>
+            <input type="email" name="email" placeholder="E-post" required>
+            <input type="text" name="username" placeholder="Brukernavn" required>
+            <input type="password" name="password" placeholder="Passord" required>
+            <input type="password" name="confirm_password" placeholder="Bekreft Passord" required>
+            <button type="submit">Registrer</button>
+        </form>
+        <a href="login.html" class="login-link">Har du allerede en konto? Logg inn</a>
+    </div>
+
+</body>
+</html>
