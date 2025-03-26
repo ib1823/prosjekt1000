@@ -124,20 +124,25 @@ nav ul li a:hover {
     transform: translateY(-50%);
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
+    padding:15px;
     border-radius: 10px;
-    max-width: 500px;
+    max-width: 450px;
 }
 
+
+
+
+
 .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 15px;
+    gap: 10px;
+    margin-top: 15px;
 }
 
 .btn {
@@ -557,6 +562,94 @@ h2 {
     background: #6A0DAD;
 }
 
+.booking-btn {
+    background-color: #a671d3;
+    color: white !important;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.booking-btn:hover {
+    background-color: #8d42ce;
+    color: white !important;
+}
+
+/* Også legge til en Book Time-knapp på hero-seksjonen */
+.book-now-btn {
+    background-color: #a671d3;
+    color: white;
+    font-weight: bold;
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-now-btn:hover {
+    background-color: #8d42ce;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.booking-banner {
+    background:  #a671d3;
+    color: white;
+    padding: 40px 20px;
+    margin: 40px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.booking-banner h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.booking-banner p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+
+.banner-btn {
+    background-color: white;
+    color: #a671d3;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.banner-btn:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode support */
+.dark-mode .banner-btn {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode .banner-btn:hover {
+    background-color: #444;
+}
+
 /* Dark mode */
 .dark-mode {
     background-color: #222;
@@ -695,6 +788,8 @@ h2 {
     margin-bottom: 15px;
     filter: brightness(0) invert(1); /* Gjør logoen hvit for bedre kontrast */
 }
+
+
 
 
 
