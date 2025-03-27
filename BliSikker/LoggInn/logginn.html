@@ -6,87 +6,71 @@
     <title>Logg Inn</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #e8f5e9; /* Lys grønn bakgrunn for å matche en grønn logo */
+            background-color: #f4f1fa;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
         }
-        .login-container {
-            background-color: #ffffff; /* Hvit bakgrunn for innloggingsvinduet */
+        .container {
+            background: white;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            max-width: 400px;
+            width: 100%;
+            position: relative;
         }
-        .login-container h2 {
-            margin-bottom: 20px;
-            color: #388e3c; /* Mørkere grønn farge for overskriften */
+        .logo {
+            width: 120px;
+            margin: 0 auto 20px auto;
+            display: block;
         }
-        .login-container input {
+        .input-field {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-        .login-container button {
+        .button {
             width: 100%;
             padding: 10px;
-            background-color: #4CAF50; /* Grønn farge for logg inn-knappen */
+            background-color: #6a0dad;
             color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-size: 16px;
             cursor: pointer;
         }
-        .login-container button:hover {
-            background-color: #45a049; /* Mørkere grønn når knappen er hoveret */
+        .button:hover {
+            background-color: #4f0b9c;
         }
-        .login-container .forgot-password {
+        .back-link {
             display: block;
-            margin-top: 10px;
-            font-size: 14px;
-            color: #388e3c; /* Mørkere grønn farge for glemt passord-lenken */
+            color: #6a0dad;
             text-decoration: none;
-        }
-        .login-container .forgot-password:hover {
-            text-decoration: underline;
-        }
-        .login-container .register-link {
-            display: block;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #4CAF50; /* Grønn farge for registrer deg-lenken */
-            text-decoration: none;
-        }
-        .login-container .register-link:hover {
-            text-decoration: underline;
-        }
-        .logo {
-            width: 150px; /* Juster størrelsen på logoen etter behov */
-            margin-bottom: 20px; /* Avstand mellom logoen og innloggingsskjemaet */
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
-
-    <div class="login-container">
-        <!-- Logo lagt til her -->
+    <div class="container">
+        <a href="../Hjem/Hjem.html" class="back-link">← Tilbake til Hjem</a>
         <img src="BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="logo">
-        
         <h2>Logg Inn</h2>
-        <form action="/login" method="POST">
-            <input type="text" name="username" placeholder="Brukernavn" required>
-            <input type="password" name="password" placeholder="Passord" required>
-            <button type="submit">Logg Inn</button>
+        <form action="../Registrer/logginn.php" method="POST">
+            <input type="email" name="epost" class="input-field" placeholder="E-post" required>
+            <input type="password" name="passord" class="input-field" placeholder="Passord" required>
+            <button type="submit" class="button">Logg Inn</button>
         </form>
-        <a href="#" class="forgot-password">Glemt passord?</a>
-        <!-- Oppdatert lenke til registreringssiden -->
-        <a href="../Registrering/registrering.html" class="register-link">Registrer deg</a>
+        <p><a href="glemt_passord.php" class="back-link">Glemt passord?</a></p>
+        <p>Har du ikke en konto? <a href="../Registrering/registrering.html" class="back-link">Registrer deg</a></p>
     </div>
-
 </body>
 </html>

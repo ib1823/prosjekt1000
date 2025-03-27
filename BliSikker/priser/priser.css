@@ -57,6 +57,19 @@ nav ul li a:hover {
     color: white;
 }
 
+.booking-btn {
+    background-color: #a671d3;
+    color: white !important;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.booking-btn:hover {
+    background-color: #8d42ce;
+    color: white !important;
+}
+
 /* Dark mode toggle */
 .toggle-switch {
     position: relative;
