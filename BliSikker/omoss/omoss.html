@@ -6,7 +6,271 @@
     <title>Om oss - Bli Sikker</title>
     <link rel="stylesheet" href="Omoss.css">
     <script src="Omoss.js"></script>
-   
+    <style>
+        /* Override styles to fix positioning and improve layout */
+        .about-section .container {
+            position: relative;
+            margin: 0 auto;
+            max-width: 80%;
+            padding: 30px;
+            text-align: left;
+            left: 0; /* Remove the 10px left offset */
+        }
+        
+        /* Create a modern two-column layout for founders section */
+        .founders-section {
+            background-color: #f9f9f9;
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+        
+        .founders-container {
+            max-width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .founders-title {
+            margin-bottom: 40px;
+            color: #333;
+            font-size: 2rem;
+        }
+        
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 0 auto;
+            max-width: 900px;
+        }
+        
+        .founder-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .founder-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .founder-image {
+            height: 220px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .founder-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .founder-card:hover .founder-image img {
+            transform: scale(1.05);
+        }
+        
+        .founder-info {
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .founder-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 0 0 5px 0;
+            color: #a671d3;
+        }
+        
+        .founder-role {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        /* Vision section styling */
+        .vision-section {
+            background-color: #a671d3;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin: 60px 0;
+        }
+        
+        .vision-container {
+            max-width: 70%;
+            margin: 0 auto;
+        }
+        
+        .vision-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .vision-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Make body styling adaptable to dark mode toggle */
+        .dark-mode .founders-section {
+            background-color: #333;
+        }
+        
+        .dark-mode .founder-card {
+            background-color: #444;
+        }
+        
+        .dark-mode .founder-name {
+            color: #c992ff;
+        }
+        
+        .dark-mode .founder-role {
+            color: #ddd;
+        }
+        
+        .dark-mode .vision-section {
+            background-color: #4B0082;
+        }
+        
+        /* Timeline section */
+        .timeline-section {
+            padding: 60px 0;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+        
+        .timeline-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #a671d3;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            top: 15px;
+            border-radius: 50%;
+            background-color: white;
+            border: 4px solid #a671d3;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: #a671d3;
+            margin-bottom: 10px;
+        }
+        
+        .dark-mode .timeline::after {
+            background-color: #c992ff;
+        }
+        
+        .dark-mode .timeline-item::after {
+            background-color: #333;
+            border-color: #c992ff;
+        }
+        
+        .dark-mode .timeline-content {
+            background-color: #444;
+            color: white;
+        }
+        
+        .dark-mode .timeline-date {
+            color: #c992ff;
+        }
+        
+        /* Make responsive */
+        @media (max-width: 768px) {
+            .founders-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .vision-container,
+            .about-section .container,
+            .founders-container,
+            .timeline-section {
+                max-width: 90%;
+            }
+            
+            .timeline::after {
+                left: 40px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after,
+            .timeline-item:nth-child(even)::after {
+                left: 28px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .founders-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
