@@ -6,275 +6,7 @@
     <title>Om oss - Bli Sikker</title>
     <link rel="stylesheet" href="Omoss.css">
     <script src="Omoss.js"></script>
-<<<<<<< HEAD
-    <style>
-        /* Override styles to fix positioning and improve layout */
-        .about-section .container {
-            position: relative;
-            margin: 0 auto;
-            max-width: 80%;
-            padding: 30px;
-            text-align: left;
-            left: 0; /* Remove the 10px left offset */
-        }
-        
-        /* Create a modern two-column layout for founders section */
-        .founders-section {
-            background-color: #f9f9f9;
-            padding: 60px 0;
-            margin-top: 40px;
-        }
-        
-        .founders-container {
-            max-width: 80%;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .founders-title {
-            margin-bottom: 40px;
-            color: #333;
-            font-size: 2rem;
-        }
-        
-        .founders-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin: 0 auto;
-            max-width: 900px;
-        }
-        
-        .founder-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .founder-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-        
-        .founder-image {
-            height: 220px;
-            width: 100%;
-            overflow: hidden;
-        }
-        
-        .founder-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .founder-card:hover .founder-image img {
-            transform: scale(1.05);
-        }
-        
-        .founder-info {
-            padding: 15px;
-            text-align: center;
-        }
-        
-        .founder-name {
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin: 0 0 5px 0;
-            color: #a671d3;
-        }
-        
-        .founder-role {
-            font-size: 0.9rem;
-            color: #666;
-            margin: 0;
-        }
-        
-        /* Vision section styling */
-        .vision-section {
-            background-color: #a671d3;
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-            margin: 60px 0;
-        }
-        
-        .vision-container {
-            max-width: 70%;
-            margin: 0 auto;
-        }
-        
-        .vision-title {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-        
-        .vision-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* Make body styling adaptable to dark mode toggle */
-        .dark-mode .founders-section {
-            background-color: #333;
-        }
-        
-        .dark-mode .founder-card {
-            background-color: #444;
-        }
-        
-        .dark-mode .founder-name {
-            color: #c992ff;
-        }
-        
-        .dark-mode .founder-role {
-            color: #ddd;
-        }
-        
-        .dark-mode .vision-section {
-            background-color: #4B0082;
-        }
-        
-        /* Timeline section */
-        .timeline-section {
-            padding: 60px 0;
-            max-width: 80%;
-            margin: 0 auto;
-        }
-        
-        .timeline-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #a671d3;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-        
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -12px;
-            top: 15px;
-            border-radius: 50%;
-            background-color: white;
-            border: 4px solid #a671d3;
-            z-index: 1;
-        }
-        
-        .timeline-item:nth-child(even)::after {
-            left: -12px;
-        }
-        
-        .timeline-content {
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .timeline-date {
-            font-weight: bold;
-            color: #a671d3;
-            margin-bottom: 10px;
-        }
-        
-        .dark-mode .timeline::after {
-            background-color: #c992ff;
-        }
-        
-        .dark-mode .timeline-item::after {
-            background-color: #333;
-            border-color: #c992ff;
-        }
-        
-        .dark-mode .timeline-content {
-            background-color: #444;
-            color: white;
-        }
-        
-        .dark-mode .timeline-date {
-            color: #c992ff;
-        }
-        
-        /* Make responsive */
-        @media (max-width: 768px) {
-            .founders-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .vision-container,
-            .about-section .container,
-            .founders-container,
-            .timeline-section {
-                max-width: 90%;
-            }
-            
-            .timeline::after {
-                left: 40px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 20px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item::after,
-            .timeline-item:nth-child(even)::after {
-                left: 28px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .founders-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-=======
-    
->>>>>>> 95e09b640d8c74561a8204b698ee669d394afa5c
+   
 </head>
 <body>
     <header>
@@ -293,16 +25,13 @@
             <span class="slider"></span>
         </label>
     </header>
-    
+
     <section class="about-section">
         <div class="container">
             <h1>Om oss</h1>
-            <p><strong>Velkommen til Bli Sikker!</strong> – en læringsplattform skapt av ambisiøse, nyutdannede studenter med en drøm om å gjøre utdanning tilgjengelig for alle. 
-                Vår reise startet tidlig på 2000-tallet, da en gruppe venner med ulike akademiske bakgrunner innså hvor utfordrende det var for mange å få plass på studier, 
-                skaffe seg kompetanseheving eller rett og slett finne den rette utdanningen.</p>
-            
+            <p><strong>Velkommen til Bli Sikker!</strong> – en læringsplattform skapt av ambisiøse, nyutdannede studenter med en drøm om å gjøre utdanning tilgjengelig for alle. Vår reise startet tidlig på 2000-tallet, da en gruppe venner med ulike akademiske bakgrunner innså hvor utfordrende det var for mange å få plass på studier, skaffe seg kompetanseheving eller rett og slett finne den rette utdanningen.</p>
+
             <h2>Fra idé til virkelighet</h2>
-<<<<<<< HEAD
             <p>Det hele begynte i et lite, trangt kontor delt mellom fire venner – en programmerer, en økonom, en designer og en pedagog. De kom fra ulike studieretninger, men delte én felles frustrasjon: utdanning var for mange for dyrt, for utilgjengelig og altfor begrenset av opptakskrav og formaliteter.</p>
 
             <p>De så en voksende trend i nettbasert læring, men fant at de fleste kursene som fantes enten var overfladiske eller manglet den praktiske relevansen som arbeidslivet krevde. De bestemte seg for å bygge en plattform der alle – uavhengig av bakgrunn – kunne få tilgang til kvalitetssikret utdanning, enten for å skaffe seg nye ferdigheter, få en sertifisering eller rett og slett lære noe nytt.</p>
@@ -364,33 +93,15 @@
 
     <section class="about-section">
         <div class="container">
-=======
-            <p>Det hele begynte i et lite, trangt kontor delt mellom fire venner – en programmerer, 
-                en økonom, en designer og en pedagog. De kom fra ulike studieretninger, 
-                men delte én felles frustrasjon: utdanning var for mange for dyrt, 
-                for utilgjengelig og altfor begrenset av opptakskrav og formaliteter.</p>
-            
-            <p>De så en voksende trend i nettbasert læring, 
-                men fant at de fleste kursene som fantes enten var overfladiske eller manglet den praktiske relevansen som arbeidslivet krevde. 
-                De bestemte seg for å bygge en plattform der alle – uavhengig av bakgrunn – kunne få tilgang til kvalitetssikret utdanning, 
-                enten for å skaffe seg nye ferdigheter, få en sertifisering eller rett og slett lære noe nytt.</p>
-            
-            <p>I begynnelsen underviste de selv, skapte læremateriell og testet ulike undervisningsformer. 
-                Med tiden vokste både plattformen og nettverket, og de tiltrakk seg flere eksperter fra ulike fagfelt som delte deres visjon. 
-                Sakte men sikkert ble drømmen til realitet – <strong>Bli Sikker!</strong> var født.</p>
-            
->>>>>>> 95e09b640d8c74561a8204b698ee669d394afa5c
             <h2>Hva vi tilbyr</h2>
-            <p>I dag er Bli Sikker! en ledende plattform for fleksibel utdanning. 
-                Vi tilbyr en rekke kurs og sertifiseringsprogrammer innenfor ulike fagfelt, alt fra IT og programmering til økonomi, design og helse.</p>
-            
+            <p>I dag er Bli Sikker! en ledende plattform for fleksibel utdanning. Vi tilbyr en rekke kurs og sertifiseringsprogrammer innenfor ulike fagfelt, alt fra IT og programmering til økonomi, design og helse.</p>
+
             <ul>
                 <li>📚 Et bredt utvalg av fagområder – fra praktiske ferdigheter til akademiske studier.</li>
                 <li>🎓 Offisielle sertifiseringer som hjelper deg i jobbmarkedet.</li>
                 <li>🖥️ Full fleksibilitet – studer i ditt eget tempo, hvor som helst.</li>
                 <li>👨‍🏫 Erfarne instruktører med ekte bransjekunnskap.</li>
             </ul>
-<<<<<<< HEAD
         </div>
     </section>
 
@@ -454,26 +165,6 @@
                     </div>
                 </div>
             </div>
-=======
-            
-            <h2>Vår visjon</h2>
-            <p>Vi tror på en fremtid hvor utdanning ikke er begrenset av økonomiske hindre eller opptakskrav. 
-                Vårt mål er å gi alle en sjanse til å bygge sin karriere, uansett hvor de kommer fra eller hvilken vei de har fulgt tidligere. 
-                Enten du ikke kom inn på studiet du ønsket, ønsker en raskere vei til ny kunnskap, eller bare vil lære noe nytt på fritiden – <strong>Bli Sikker!</strong> er her for deg.</p>
-            
-            <p>Vår reise startet med en enkel idé, og i dag hjelper vi tusenvis av studenter med å oppnå sine utdanningsmål. Og dette er bare begynnelsen.</p>
-        </div>
-    </section>
-     <!-- Seksjon med 6 bilder på høyre side -->
-     <div class="side-bilde-seksjon">
-        <div class="side-bilde-wrapper">
-            <div class="bilde-boks"><img src="joseph.png" alt="Bilde 1"></div>
-            <div class="bilde-boks"><img src="steven.jpg" alt="Bilde 2"></div>
-            <div class="bilde-boks"><img src="ibra.jpg" alt="Bilde 3"></div>
-            <div class="bilde-boks"><img src="zain.jpg" alt="Bilde 4"></div>
-            <div class="bilde-boks"><img src="brain.jpg" alt="Bilde 5"></div>
-            <div class="bilde-boks"><img src="bilder/bilde6.jpg" alt="Bilde 6"></div>
->>>>>>> 95e09b640d8c74561a8204b698ee669d394afa5c
         </div>
     </section>
 
@@ -484,7 +175,7 @@
                 <img src="BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="footer-logo">
                 <p>© 2025 Bli Sikker. Alle rettigheter reservert.</p>
             </div>
-    
+
             <!-- Kolonne 1 -->
             <div class="footer-section">
                 <h4>Bli Sikker</h4>
@@ -492,7 +183,7 @@
                 <p><a href="#">Fagartikler</a></p>
                 <p><a href="#">Jobb hos oss</a></p>
             </div>
-    
+
             <!-- Kolonne 2 -->
             <div class="footer-section">
                 <h4>Ressurser</h4>
@@ -500,26 +191,15 @@
                 <p><a href="#">Personvern</a></p>
                 <p><a href="#">Cookies</a></p>
             </div>
-    
+
             <!-- Kolonne 3 -->
             <div class="footer-section">
                 <h4>Kom i gang</h4>
-                <p><a href="../Fag/fag.html">Finn kurs</a></p>
-                <p><a href="../Registrering/registrering.html">Logg inn</a></p>
-                <a href="mailto:KundeService@BliSikker.com?subject=Henvendelse&body=Hei, jeg har et spørsmål om...">
-                    Kontakt oss
-                </a>
-                
+                <p><a href="#">Finn kurs</a></p>
+                <p><a href="#">Logg inn</a></p>
             </div>
         </div>
-    </footer>
-<<<<<<< HEAD
-
-   
-=======
-    
-    
-    
->>>>>>> 95e09b640d8c74561a8204b698ee669d394afa5c
+  </footer>
 </body>
 </html>
+
