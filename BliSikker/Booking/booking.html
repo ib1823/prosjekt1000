@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Time - Bli Sikker</title>
+    <link rel="stylesheet" href="booking.css">
+    <script src="booking.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="../hjem/hjem.html">Hjem</a></li>
+                <li><a href="../Fag/fag.html">Kurs</a></li>
+                <li><a href="../booking/booking.html" class="booking-btn">Book Time</a></li>
+                <li><a href="../omoss/omoss.html">Om oss</a></li>
+                <li><a href="#">Priser</a></li>
+                <li><a href="../LoggInn/logginn.html">Logg inn</a></li>
+            </ul>
+        </nav>
+        <label class="toggle-switch">
+            <input type="checkbox" id="mode-toggle">
+            <span class="slider"></span>
+        </label>
+    </header>
+
+    <main class="booking-container">
+        <section class="booking-hero">
+            <h1>Book time med våre dyktige lærere</h1>
+            <p>Finn tilgjengelige timer i fagene du trenger hjelp med</p>
+        </section>
+
+        <section class="booking-process">
+            <div class="booking-steps">
+                <div class="step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Velg fag</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Velg lærer</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Velg tid</div>
+                </div>
+                <div class="step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Bekreft</div>
+                </div>
+            </div>
+
+            <!-- Steg 1: Velg fag -->
+            <div class="booking-panel active" id="step-1-panel">
+                <h2>Velg fagområde</h2>
+                <div class="subject-grid">
+                    <div class="subject-card" data-subject="Matematikk">
+                        <div class="subject-icon">📐</div>
+                        <h3>Matematikk</h3>
+                    </div>
+                    <div class="subject-card" data-subject="Informatikk">
+                        <div class="subject-icon">💻</div>
+                        <h3>Informatikk</h3>
+                    </div>
+                    <div class="subject-card" data-subject="Fysikk">
+                        <div class="subject-icon">🔬</div>
+                        <h3>Fysikk</h3>
+                    </div>
+                    <div class="subject-card" data-subject="Kjemi">
+                        <div class="subject-icon">🧪</div>
+                        <h3>Kjemi</h3>
+                    </div>
+                    <div class="subject-card" data-subject="Biologi">
+                        <div class="subject-icon">🌱</div>
+                        <h3>Biologi</h3>
+                    </div>
+                    <div class="subject-card" data-subject="Økonomi">
+                        <div class="subject-icon">📊</div>
+                        <h3>Økonomi</h3>
+                    </div>
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn next-step" data-next="2" disabled>Neste</button>
+                </div>
+            </div>
+
+            <!-- Steg 2: Velg lærer -->
+            <div class="booking-panel" id="step-2-panel">
+                <h2>Velg lærer</h2>
+                <div class="teacher-grid" id="teacher-list">
+                    <!-- Lærere vil bli lastet inn dynamisk basert på valgt fag -->
+                </div>
+                <div class="navigation-buttons">
+                    <button class="btn prev-step" data-prev="1">Tilbake</button>
+                    <button class="btn next-step" data-next="3" disabled>Neste</button>
+                </div>
+            </div>
+
+            <!-- Steg 3: Velg tid -->
+            <div class="booking-panel" id="step-3-panel">
+                <h2>Velg tid</h2>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                        <button id="prev-month">◀</button>
+                        <h3 id="current-month">April 2025</h3>
+                        <button id="next-month">▶</button>
+                    </div>
+                    <div class="weekdays">
+                        <div>Man</div>
+                        <div>Tir</div>
+                        <div>Ons</div>
+                        <div>Tor</div>
+                        <div>Fre</div>
+                        <div>Lør</div>
+                        <div>Søn</div>
+                    </div>
+                    <div class="calendar-days" id="calendar-days">
+                        <!-- Dager vil bli generert dynamisk i JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="time-slots" id="time-slots">
+                    <h3>Velg tidspunkt for <span id="selected-date">valgt dato</span></h3>
+                    <div class="slots-grid">
+                        <!-- Tidspunkt vil bli generert dynamisk i JavaScript -->
+                    </div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button class="btn prev-step" data-prev="2">Tilbake</button>
+                    <button class="btn next-step" data-next="4" disabled>Neste</button>
+                </div>
+            </div>
+
+            <!-- Steg 4: Bekreft booking -->
+            <div class="booking-panel" id="step-4-panel">
+                <h2>Bekreft timebestilling</h2>
+                <div class="booking-summary">
+                    <div class="summary-item">
+                        <strong>Fag:</strong>
+                        <span id="summary-subject"></span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Lærer:</strong>
+                        <span id="summary-teacher"></span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Dato:</strong>
+                        <span id="summary-date"></span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Tidspunkt:</strong>
+                        <span id="summary-time"></span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Pris:</strong>
+                        <span id="summary-price"></span>
+                    </div>
+                </div>
+                
+                <div class="booking-note">
+                    <h3>Legg til melding til læreren (valgfritt)</h3>
+                    <textarea id="booking-message" placeholder="Fortell læreren hva du trenger hjelp med..."></textarea>
+                </div>
+                
+                <div class="payment-options">
+                    <h3>Betalingsmetode</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method active">
+                            <img src="vipps-logo.png" alt="Vipps" class="payment-logo">
+                            <span>Vipps</span>
+                        </div>
+                        <div class="payment-method">
+                            <img src="card-icon.png" alt="Kredittkort" class="payment-logo">
+                            <span>Kredittkort</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="navigation-buttons">
+                    <button class="btn prev-step" data-prev="3">Tilbake</button>
+                    <button class="btn confirm-booking">Bekreft og betal</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="booking-success-modal" id="booking-success">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="success-icon">✓</div>
+            <h2>Booking bekreftet!</h2>
+            <p>Din time er nå reservert. Du vil motta en bekreftelse på e-post.</p>
+            <div class="booking-details">
+                <p><strong>Referansenummer:</strong> <span id="booking-ref"></span></p>
+                <p><strong>Fag:</strong> <span id="modal-subject"></span></p>
+                <p><strong>Lærer:</strong> <span id="modal-teacher"></span></p>
+                <p><strong>Dato og tid:</strong> <span id="modal-datetime"></span></p>
+            </div>
+            <button class="btn" id="go-to-dashboard">Gå til mine timer</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Logo + Sosiale medier -->
+            <div class="footer-section">
+                <img src="BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="footer-logo">
+                <p>© 2025 Bli Sikker. Alle rettigheter reservert.</p>
+            </div>
+    
+            <!-- Kolonne 1 -->
+            <div class="footer-section">
+                <h4>Bli Sikker</h4>
+                <p><a href="#">Om oss</a></p>
+                <p><a href="#">Fagartikler</a></p>
+                <p><a href="#">Jobb hos oss</a></p>
+            </div>
+    
+            <!-- Kolonne 2 -->
+            <div class="footer-section">
+                <h4>Ressurser</h4>
+                <p><a href="#">Brukervilkår</a></p>
+                <p><a href="#">Personvern</a></p>
+                <p><a href="#">Cookies</a></p>
+            </div>
+    
+            <!-- Kolonne 3 -->
+            <div class="footer-section">
+                <h4>Kom i gang</h4>
+                <p><a href="#">Finn kurs</a></p>
+                <p><a href="#">Prøv gratis</a></p>
+                <p><a href="#">Logg inn</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

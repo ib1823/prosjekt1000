@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lærerprofil - Bli Sikker</title>
+    <link rel="stylesheet" href="larer.css">
+    <script src="larer.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="../hjem/BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="../hjem/hjem.html">Hjem</a></li>
+                <li><a href="../Fag/fag.html">Kurs</a></li>
+                <li><a href="../booking/booking.html" class="booking-btn">Book Time</a></li>
+                <li><a href="../omoss/omoss.html">Om oss</a></li>
+                <li><a href="../LoggInn/logginn.html">Logg inn</a></li>
+            </ul>
+        </nav>
+        <label class="toggle-switch">
+            <input type="checkbox" id="mode-toggle">
+            <span class="slider"></span>
+        </label>
+    </header>
+
+    <main class="profile-container">
+        <section class="profile-header">
+            <div class="profile-image-container">
+                <img src="../hjem/teacher4.jpg" alt="Kari Hansen" class="profile-image">
+            </div>
+            <div class="profile-info">
+                <h1>Kari Hansen</h1>
+                <div class="rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-value">4.8</span>
+                    <span class="reviews">(42 vurderinger)</span>
+                </div>
+                <div class="expertise">
+                    <span class="tag">Matematikk</span>
+                    <span class="tag">Fysikk</span>
+                    <span class="tag">Statistikk</span>
+                </div>
+                <p class="price">450 kr per time</p>
+                <a href="../booking/booking.html?teacher=kari-hansen" class="book-now-btn">Book Time Nå</a>
+            </div>
+        </section>
+
+        <section class="profile-tabs">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="about">Om meg</button>
+                <button class="tab-btn" data-tab="experience">Erfaring</button>
+                <button class="tab-btn" data-tab="education">Utdanning</button>
+                <button class="tab-btn" data-tab="reviews">Vurderinger</button>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-panel active" id="about-panel">
+                    <h2>Om Kari Hansen</h2>
+                    <p>Jeg er en lidenskapelig matematikklærer med over 10 års erfaring i undervisning, både på universitets- og videregående nivå. Min undervisningsfilosofi er basert på å skape en trygg og engasjerende læringsopplevelse hvor elevene føler seg komfortable med å stille spørsmål og utforske matematiske konsepter.</p>
+                    
+                    <p>Jeg elsker å tilpasse undervisningen til hver enkelt students læringsstil og behov. Min styrke ligger i å bryte ned komplekse matematiske konsepter til forståelige deler, slik at studentene kan bygge solid forståelse og selvtillit i faget.</p>
+                    
+                    <h3>Undervisningsstil</h3>
+                    <ul>
+                        <li>Interaktiv og engasjerende tilnærming</li>
+                        <li>Fokus på forståelse fremfor pugging</li>
+                        <li>Bruk av praktiske eksempler og relevante anvendelser</li>
+                        <li>Tålmodig og støttende veiledning</li>
+                        <li>Tilpasset undervisning basert på individuelle behov</li>
+                    </ul>
+                    
+                    <h3>Fagområder</h3>
+                    <p>Jeg tilbyr undervisning i følgende fagområder:</p>
+                    <ul>
+                        <li>Matematikk (grunn-, videregående- og universitetsnivå)</li>
+                        <li>Fysikk (grunn- og videregående nivå)</li>
+                        <li>Statistikk (grunnleggende og videregående nivå)</li>
+                        <li>Forberedelse til eksamener og prøver</li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" id="experience-panel">
+                    <h2>Erfaring</h2>
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Matematikklærer</h3>
+                            <span class="experience-period">2018 - Nåværende</span>
+                        </div>
+                        <p class="experience-location">Oslo Videregående Skole</p>
+                        <p>Underviser i matematikk på alle nivåer i videregående skole. Spesialisert i matematikk R1, R2 og S1, S2. Utviklet nye undervisningsmetoder som har økt gjennomsnittlig karakternivå med 0,7 poeng.</p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Privatlærer i matematikk og fysikk</h3>
+                            <span class="experience-period">2015 - Nåværende</span>
+                        </div>
+                        <p class="experience-location">Selvstendig</p>
+                        <p>Gitt over 1000 privattimer til studenter på ulike nivåer. Spesialisert i å hjelpe elever som sliter med å forstå grunnleggende konsepter i matematikk og fysikk.</p>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3>Universitetslektor</h3>
+                            <span class="experience-period">2012 - 2018</span>
+                        </div>
+                        <p class="experience-location">Universitetet i Oslo</p>
+                        <p>Undervist i innføringskurs i matematikk og statistikk for førsteårsstudenter. Veiledet bachelorstudenter i matematikk og statistikk.</p>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="education-panel">
+                    <h2>Utdanning</h2>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3>Master i Matematikkdidaktikk</h3>
+                            <span class="education-period">2010 - 2012</span>
+                        </div>
+                        <p class="education-institution">Universitetet i Oslo</p>
+                        <p>Spesialisering i undervisningsmetoder for matematikk på videregående nivå. Masteroppgave om problemløsning og konseptuell forståelse i matematikkundervisning.</p>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3>Bachelor i Matematikk</h3>
+                            <span class="education-period">2007 - 2010</span>
+                        </div>
+                        <p class="education-institution">NTNU Trondheim</p>
+                        <p>Fordypning i ren matematikk og statistikk. Bacheloroppgave om differensialligninger og deres anvendelser.</p>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3>Praktisk-pedagogisk utdanning (PPU)</h3>
+                            <span class="education-period">2012 - 2013</span>
+                        </div>
+                        <p class="education-institution">Universitetet i Oslo</p>
+                        <p>Lærerutdanning med spesialisering i matematikk og fysikk for videregående skole.</p>
+                    </div>
+                    
+                    <h3>Sertifiseringer</h3>
+                    <ul class="certifications-list">
+                        <li>Sertifisert GeoGebra-instruktør (2015)</li>
+                        <li>Kurs i tilpasset opplæring for elever med lærevansker (2017)</li>
+                        <li>Sertifisering i vurdering for læring (2019)</li>
+                    </ul>
+                </div>
+
+                <div class="tab-panel" id="reviews-panel">
+                    <h2>Vurderinger fra tidligere studenter</h2>
+                    <div class="reviews-summary">
+                        <div class="overall-rating">
+                            <span class="large-rating">4.8</span>
+                            <div class="rating-stars">★★★★★</div>
+                            <p>42 vurderinger</p>
+                        </div>
+                        <div class="rating-breakdown">
+                            <div class="rating-bar">
+                                <span class="rating-label">5 stjerner</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 85%;"></div>
+                                </div>
+                                <span class="rating-count">36</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-label">4 stjerner</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 10%;"></div>
+                                </div>
+                                <span class="rating-count">4</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-label">3 stjerner</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 5%;"></div>
+                                </div>
+                                <span class="rating-count">2</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-label">2 stjerner</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 0%;"></div>
+                                </div>
+                                <span class="rating-count">0</span>
+                            </div>
+                            <div class="rating-bar">
+                                <span class="rating-label">1 stjerne</span>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 0%;"></div>
+                                </div>
+                                <span class="rating-count">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="reviews-list">
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <img src="../images/student1.jpg" alt="Student" class="reviewer-image">
+                                    <div>
+                                        <h4>Jonas Pedersen</h4>
+                                        <div class="review-rating">★★★★★</div>
+                                    </div>
+                                </div>
+                                <span class="review-date">15. mars 2025</span>
+                            </div>
+                            <p class="review-text">Kari er en fantastisk lærer! Hun forklarte komplekse matematiske konsepter på en måte som var lett å forstå, og var alltid tålmodig med mine spørsmål. Etter bare fem timer med Kari gikk jeg fra en 3-er til en sterk 5-er på matematikkeksamen. Kan ikke anbefale henne nok!</p>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <img src="../images/student2.jpg" alt="Student" class="reviewer-image">
+                                    <div>
+                                        <h4>Sofie Hansen</h4>
+                                        <div class="review-rating">★★★★★</div>
+                                    </div>
+                                </div>
+                                <span class="review-date">2. mars 2025</span>
+                            </div>
+                            <p class="review-text">Jeg har alltid slitt med matematikk og var nervøs for å ta privattimer, men Kari fikk meg til å føle meg komfortabel fra første time. Hun tilpasset undervisningen til min læringsstil og jobbet tålmodig med meg gjennom hvert konsept. Takket være Kari har jeg nå utviklet en genuin interesse for matematikk!</p>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <img src="../images/student3.jpg" alt="Student" class="reviewer-image">
+                                    <div>
+                                        <h4>Markus Olsen</h4>
+                                        <div class="review-rating">★★★★☆</div>
+                                    </div>
+                                </div>
+                                <span class="review-date">18. februar 2025</span>
+                            </div>
+                            <p class="review-text">Kari er veldig kunnskapsrik og dyktig i å forklare vanskelige konsepter. Hun er alltid godt forberedt til timene og gir gode oppgaver å jobbe med mellom øktene. Eneste grunnen til at jeg gir 4 stjerner i stedet for 5 er at timene noen ganger går litt over tiden, men det er fordi hun virkelig bryr seg om at elevene forstår stoffet.</p>
+                        </div>
+                        
+                        <button class="load-more-btn">Se flere vurderinger</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="availability-section">
+            <h2>Tilgjengelighet</h2>
+            <div class="availability-container">
+                <div class="calendar-section">
+                    <div class="calendar-header">
+                        <button id="prev-month">◀</button>
+                        <h3 id="current-month">April 2025</h3>
+                        <button id="next-month">▶</button>
+                    </div>
+                    <div class="weekdays">
+                        <div>Man</div>
+                        <div>Tir</div>
+                        <div>Tir</div>
+                        <div>Ons</div>
+                        <div>Tor</div>
+                        <div>Fre</div>
+                        <div>Lør</div>
+                        <div>Søn</div>
+                    </div>
+                    <div class="calendar-days">
+                        <!-- Kalenderdager vil bli generert dynamisk i JavaScript -->
+                    </div>
+                </div>
+                <div class="availability-slots">
+                    <!-- Tilgjengelige tidspunkter vil bli vist her når en dato er valgt -->
+                </div>
+            </div>
+        </section>
+
+        <section class="similar-teachers">
+            <h2>Andre lærere innen Matematikk</h2>
+            <div class="teacher-grid">
+                <div class="teacher-card">
+                    <img src="../hjem/teacher2.jpg" alt="Ole Jensen">
+                    <h3>Ole Jensen</h3>
+                    <div class="stars">★★★★★ 4.6</div>
+                    <p>Matematikk, Statistikk</p>
+                    <p class="price">400 kr/time</p>
+                    <a href="ole-jensen.html" class="view-profile-btn">Se profil</a>
+                </div>
+                <div class="teacher-card">
+                    <img src="../hjem/teacher3.jpg" alt="Siv Larsen">
+                    <h3>Siv Larsen</h3>
+                    <div class="stars">★★★★★ 4.9</div>
+                    <p>Matematikk, Kjemi</p>
+                    <p class="price">500 kr/time</p>
+                    <a href="siv-larsen.html" class="view-profile-btn">Se profil</a>
+                </div>
+                <div class="teacher-card">
