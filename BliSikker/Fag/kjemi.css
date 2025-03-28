@@ -495,3 +495,45 @@ nav ul li a:hover {
     color: #ddd;
 }
 
+.kjemi-info {
+    background-color: #ffffff;
+    color: #333;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kjemi-info h2 {
+    color: #4B0082;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+}
+
+.kjemi-info p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.kjemi-info ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.kjemi-info ul li {
+    margin-bottom: 10px;
+}
+
+/* Dark mode støtte */
+.dark-mode .kjemi-info {
+    background-color: #2e2e2e;
+    color: #f1f1f1;
+}
+
+.dark-mode .kjemi-info h2 {
+    color: #cfa3ff;
+}
