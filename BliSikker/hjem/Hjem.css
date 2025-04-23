@@ -145,6 +145,19 @@ nav ul li a:hover {
     margin-top: 15px;
 }
 
+ /* Additional styles for hero buttons */
+ .hero-btn {
+    background-color: #a671d3;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
 .btn {
     background-color: #a671d3 ;
     color: white;
@@ -649,6 +662,22 @@ h2 {
 .dark-mode .banner-btn:hover {
     background-color: #444;
 }
+
+.hero-btn:hover {
+    background-color: #8d42ce;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode support */
+.dark-mode .hero-btn {
+    background-color: #8d42ce;
+}
+
+.dark-mode .hero-btn:hover {
+    background-color: #6a309a;
+}
+
 
 /* Dark mode */
 .dark-mode {

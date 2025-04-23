@@ -1,25 +1,17 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Dark mode toggle
+document.addEventListener("DOMContentLoaded", function () {
     const toggleSwitch = document.getElementById("mode-toggle");
     const body = document.body;
-    
-    // Check for saved dark mode preference
-    if (localStorage.getItem("darkMode") === "enabled") {
-        body.classList.add("dark-mode");
-        toggleSwitch.checked = true;
-    }
 
-    // Listen for dark mode toggle changes
+    // Optimalisert dark mode-håndtering
+    const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+    body.classList.toggle("dark-mode", isDarkMode);
+    toggleSwitch.checked = isDarkMode;
+
     toggleSwitch.addEventListener("change", function () {
-        if (this.checked) {
-            body.classList.add("dark-mode");
-            localStorage.setItem("darkMode", "enabled");
-        } else {
-            body.classList.remove("dark-mode");
-            localStorage.setItem("darkMode", "disabled");
-        }
+        body.classList.toggle("dark-mode", this.checked);
+        localStorage.setItem("darkMode", this.checked ? "enabled" : "disabled");
     });
-    
+
     // FAQ-akkordeon funksjonalitet
     const faqItems = document.querySelectorAll('.faq-item');
     
