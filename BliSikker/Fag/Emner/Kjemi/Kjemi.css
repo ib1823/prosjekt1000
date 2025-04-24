@@ -22,8 +22,8 @@
     object-fit: cover;
 }
 
-/* === Ny matte-seksjon === */
-.matte-info {
+/* === Ny kjemi-seksjon === */
+.kjemi-info {
     max-width: 800px;
     margin: 60px auto 30px auto;
     text-align: center;
@@ -33,20 +33,20 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
-.matte-info h2 {
+.kjemi-info h2 {
     color: #4B0082;
     font-size: 2rem;
     margin-bottom: 15px;
 }
 
-.matte-info p {
+.kjemi-info p {
     font-size: 1rem;
     color: #444;
     line-height: 1.6;
 }
 
-/* Kurskort under matte-info */
-.matte-courses {
+/* Kurskort under kjemi-info */
+.kjemi-courses {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -151,7 +151,6 @@ input:checked + .slider:before {
     transform: translateX(38px);
     background-color: #4B0082;
     background: url('sunPurple.png') center/cover no-repeat;
-    
 }
 
 /* Navbar styling */
@@ -494,6 +493,8 @@ nav ul li a:hover {
 .dark-mode .category-list a {
     color: #ddd;
 }
+<<<<<<< HEAD:BliSikker/Fag/Emner/Kjemi/Kjemi.css
+=======
 
 .kjemi-info {
     background-color: #ffffff;
@@ -537,3 +538,4 @@ nav ul li a:hover {
 .dark-mode .kjemi-info h2 {
     color: #cfa3ff;
 }
+>>>>>>> b717a546a27767dc1a5b97e21457fe5d19f35542:BliSikker/Fag/kjemi.css
