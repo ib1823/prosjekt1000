@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="priser.css">
     <script src="priser.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
     <header>
@@ -29,10 +28,9 @@
         </label>
     </header>
 
-
     <section class="pris-header">
         <h1>Priser</h1>
-        <p>Velg en av våre semesterbaserte planer og få tilgang til privatundervisning i små klasser. Du booker selv timer med lærere etter behov – ingen live-forelesninger, bare fokusert og fleksibel læring.</p>
+        <p>Velg en av våre semesterbaserte planer og få tilgang til privatundervisning i små klasser. Du booker selv timer med lærere etter behov - ingen live-forelesninger, bare fokusert og fleksibel læring.</p>
     </section>
 
     <section class="pris-planer">
@@ -46,12 +44,13 @@
             <ul class="fordeler">
                 <li><i class="fas fa-check"></i> Tilgang til 50+ grunnleggende kurs</li>
                 <li><i class="fas fa-check"></i> Book opptil 2 undervisningstimer per uke</li>
-                <li><i class="fas fa-check"></i> Små grupper (3–6 personer)</li>
+                <li><i class="fas fa-check"></i> Små grupper (3-6 personer)</li>
                 <li><i class="fas fa-check"></i> Digitalt læremateriell inkludert</li>
                 <li class="ikke-inkludert"><i class="fas fa-times"></i> Avanserte fag</li>
                 <li class="ikke-inkludert"><i class="fas fa-times"></i> Prioritert support</li>
+                <li class="ikke-inkludert"><i class="fas fa-times"></i> Ingen en-til-en veiledning</li>
             </ul>
-            <a href="../booking/booking.html" class="kom-i-gang">Velg og book timer</a>
+            <a href="../betaling/betal.html" class="kom-i-gang">Velg sølv</a>
         </div>
 
         <div class="pris-kort gull populaer">
@@ -65,12 +64,12 @@
             <ul class="fordeler">
                 <li><i class="fas fa-check"></i> Tilgang til 200+ fag og emner</li>
                 <li><i class="fas fa-check"></i> Book opptil 4 undervisningstimer per uke</li>
-                <li><i class="fas fa-check"></i> Små grupper (3–5 personer)</li>
+                <li><i class="fas fa-check"></i> Små grupper (3-5 personer)</li>
                 <li><i class="fas fa-check"></i> Digitalt læremateriell og oppgaver</li>
                 <li><i class="fas fa-check"></i> Begrenset én-til-én veiledning</li>
                 <li><i class="fas fa-check"></i> Prioritert support</li>
             </ul>
-            <a href="../booking/booking.html" class="kom-i-gang">Velg og book timer</a>
+            <a href="../betaling/betal.html" class="kom-i-gang">Velg gull</a>
         </div>
 
         <div class="pris-kort diamant">
@@ -83,66 +82,83 @@
             <ul class="fordeler">
                 <li><i class="fas fa-check"></i> Tilgang til 300+ kurs og spesialiseringer</li>
                 <li><i class="fas fa-check"></i> Book opptil 6 undervisningstimer per uke</li>
-                <li><i class="fas fa-check"></i> Ekstra små grupper (2–4 personer)</li>
+                <li><i class="fas fa-check"></i> Ekstra små grupper (2-4 personer)</li>
                 <li><i class="fas fa-check"></i> Én-til-én veiledning tilgjengelig</li>
                 <li><i class="fas fa-check"></i> Eksklusive ressurser og kurs</li>
                 <li><i class="fas fa-check"></i> Dedikert kundekontakt</li>
             </ul>
-            <a href="../Booking/booking.html" class="kom-i-gang">Velg og book timer</a>
+            <a href="../betaling/betal.html" class="kom-i-gang">Velg diamant</a>
         </div>
     </section>
 
+    <!-- Sammenligningstabell -->
     <section class="sammenligning-seksjon">
-        <h2>Detaljert sammenligning av planer</h2>
-        <div class="tabell-container">
-            <table class="sammenligning-tabell">
-                <thead>
-                    <tr>
-                        <th class="feature-col">Funksjon</th>
-                        <th class="plan-col">Sølv</th>
-                        <th class="plan-col">Gull</th>
-                        <th class="plan-col">Diamant</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="feature-col">Tilgang til fag</td>
-                        <td class="plan-col">50+ grunnkurs</td>
-                        <td class="plan-col">200+ emner</td>
-                        <td class="plan-col">300+ emner</td>
-                    </tr>
-                    <tr>
-                        <td class="feature-col">Antall timer per uke</td>
-          <td class="plan-col">Opptil 2</td>
-          <td class="plan-col">Opptil 4</td>
-          <td class="plan-col">Opptil 6</td>
-                    </tr>
-                    <tr>
-                        <td class="feature-col">Gruppe-størrelse</td>
-                        <td class="plan-col">3–6 pers</td>
-                        <td class="plan-col">3–5 pers</td>
-                        <td class="plan-col">2–4 pers</td>
-                    </tr>
-                    <tr>
-                        <td class="feature-col">Én-til-én veiledning</td>
-                        <td><i class="fas fa-times" style="color: #ccc;"></i></td>
-                        <td class="plan-col">Begrenset</td>
-                        <td><i class="fas fa-check" style="color: #a671d3;"></i></td>
+        <div class="container">
+            <h2>Detaljert sammenligning av planer</h2>
+            <div class="tabell-container">
+                <table class="sammenligning-tabell">
+                    <thead>
                         <tr>
-                        <td class="feature-col">Eksklusivt læremateriell</td>
-                        <td><i class="fas fa-times" style="color: #ccc;"></i></td>
-                        <td><i class="fas fa-check" style="color: #a671d3;"></i></td>
-                        <td><i class="fas fa-check" style="color: #a671d3;"></i></td>
-                    </tr>
-                    <tr>
-                        <td class="feature-col">Prioritert support</td>
-                        <td><i class="fas fa-times" style="color: #ccc;"></i></td>
-                        <td><i class="fas fa-check" style="color: #a671d3;"></i></td>
-                        <td><i class="fas fa-check" style="color: #a671d3;"></i></td>
-                    </tr>
-                   
-                </tbody>
-            </table>
+                            <th></th>
+                            <th>Enkelttimer</th>
+                            <th>Sølv</th>
+                            <th>Gull</th>
+                            <th>Diamant</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Tilgang til fag</td>
+                            <td>20+ grunnkurs</td>
+                            <td>50+ grunnkurs</td>
+                            <td>200+ emner</td>
+                            <td>300+ emner</td>
+                        </tr>
+                        <tr>
+                            <td>Antall timer per uke</td>
+                            <td>Ubegrenset (kr 199/time)</td>
+                            <td>Opptil 2</td>
+                            <td>Opptil 4</td>
+                            <td>Opptil 6</td>
+                        </tr>
+                        <tr>
+                            <td>Gruppestørrelse</td>
+                            <td>5-8 pers</td>
+                            <td>3-6 pers</td>
+                            <td>3-5 pers</td>
+                            <td>2-4 pers</td>
+                        </tr>
+                        <tr>
+                            <td>Én-til-én veiledning</td>
+                            <td><span class="x-mark">✕</span></td>
+                            <td><span class="x-mark">✕</span></td>
+                            <td>Begrenset</td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Eksklusivt læremateriall</td>
+                            <td><span class="x-mark">✕</span></td>
+                            <td>Grunnleggende</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Prioritert support</td>
+                            <td><span class="x-mark">✕</span></td>
+                            <td><span class="x-mark">✕</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Samme lærer ved hver time</td>
+                            <td><span class="x-mark">✕</span></td>
+                            <td>Når tilgjengelig</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
@@ -195,13 +211,12 @@
         <h1>Klar for strukturert læring i små klasser?</h1>
         <p>Velg en semesterpakke og book dine egne timer med dyktige lærere. Fleksibelt, effektivt og helt uten forelesninger.</p>
         <div class="pris-knapper">
-          <a href="../booking/booking.html" class="pris-btn">Book Time Nå!</a>
-          <a href="../omoss/omoss.html" class="pris-btn-outline">Les mer</a>
+            <a href="../booking/booking.html" class="pris-btn">Book Time Nå!</a>
+            <a href="../omoss/omoss.html" class="pris-btn-outline">Les mer</a>
         </div>
-      </section>
-      
+    </section>
 
-      <footer class="footer">
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
                 <img src="BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="footer-logo">
@@ -230,7 +245,5 @@
             </div>
         </div>
     </footer>
-
-   
 </body>
 </html>
