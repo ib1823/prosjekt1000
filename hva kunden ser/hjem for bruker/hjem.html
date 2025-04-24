@@ -12,21 +12,46 @@
     <header>
         <img src="BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="logo">
            <nav>
-         <ul>
-                <li><a href="../hjem/hjem.html">Hjem</a></li>
-                <li><a href="../Fag/fag.html">Kurs</a></li>
-                <li><a href="../omoss/omoss.html">Om oss</a></li>
-                <li><a href="../booking/booking.html" class="booking-btn">Book Time</a></li>
-                <li><a href="../priser/priser.html">Priser</a></li>
-                <li><a href="../Registrering/registrering.html">Registrer Bruker</a></li>
-                <li><a href="../LoggInn/logginn.html">Logg inn</a></li>
+            <ul>
+                <li><a href="/hva kunden ser/hjem for bruker/hjem.html">Hjem</a></li>
+                <li><a href="/hva kunden ser/Fag/fag.html">Kurs</a></li>
+                <li><a href="/hva kunden ser/omoss/omoss.html">Om oss</a></li>
+                <li><a href="/hva kunden ser/Booking/booking.html" class="booking-btn">Book Time</a></li>
+                <li><a href="/hva kunden ser/priser/priser.html">Priser</a></li>
             </ul>
         </nav>
-        <label class="toggle-switch">
-            <input type="checkbox" id="mode-toggle">
-            <span class="slider"></span>
-        </label>
-    </header>
+    </div>
+    <div class="nav-right">
+        <div class="toggle-container">
+            <label class="toggle-switch" title="Bytt til mørk/lys modus">
+                <input type="checkbox" id="mode-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="user-menu-container">
+            <div class="notification-icon">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">1</span>
+            </div>
+            <div class="user-profile-icon" id="userMenuTrigger">
+                <div class="avatar">WQ</div>
+            </div>
+            <div class="user-dropdown" id="userDropdown">
+                <div class="dropdown-header">
+                    <p class="welcome-text">Hei, <?php echo htmlspecialchars($fornavn); ?>!</p>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Din læring</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i> Ønskeliste</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> Profil</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Innstillinger</a></li>
+                    <li><a href="#"><i class="fas fa-user-cog"></i> Konto</a></li>
+                    <li><a href="/BliSikker/hjem/hjem.html"><i class="fas fa-sign-out-alt"></i> Logg ut</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
     
     <section class="hero">
         <div class="hero-content">

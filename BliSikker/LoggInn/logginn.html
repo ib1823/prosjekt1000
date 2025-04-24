@@ -61,10 +61,11 @@
 </head>
 <body>
     <div class="container">
-        <a href="../Hjem/Hjem.html" class="back-link">← Tilbake til Hjem</a>
+        <a href="/BliSikker/Brukerside/Brukerside.html" class="back-link">← Tilbake til Hjem</a>
         <img src="BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="logo">
         <h2>Logg Inn</h2>
-        <form action="../Registrer/logginn.php" method="POST">
+        <!-- OPPDATERT HER: peker nå til PHP-backend -->
+        <form action="/BliSikker/LoggInn/loggin.php" method="POST">
             <input type="email" name="epost" class="input-field" placeholder="E-post" required>
             <input type="password" name="passord" class="input-field" placeholder="Passord" required>
             <button type="submit" class="button">Logg Inn</button>

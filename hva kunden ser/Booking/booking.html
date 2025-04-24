@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book en time | Bli Sikker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9fb;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .booking-container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .booking-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .back-button {
+      color: #8a4baf;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s;
+    }
+    .page-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #333;
+      text-align: center;
+      flex-grow: 1;
+      transition: color 0.3s;
+    }
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 80px;
+      height: 40px;
+    }
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ddd;
+      border-radius: 40px;
+      transition: 0.4s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 34px;
+      width: 34px;
+      left: 3px;
+      bottom: 3px;
+      background: url('sunIcon.png') center/cover no-repeat;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.4s;
+    }
+    input:checked + .slider {
+      background-color: #8a4baf;
+    }
+    input:checked + .slider:before {
+      transform: translateX(38px);
+      background: url('sunPurple.png') center/cover no-repeat;
+      background-color: #4B0082;
+      border-radius: 50%;
+    }
+    .booking-section {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #333;
+      transition: color 0.3s;
+    }
+    
+    /* Registreringsskjema */
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+    .form-input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    .form-input:focus {
+      border-color: #8a4baf;
+      outline: none;
+    }
+    
+    .membership-selector {
+      margin-bottom: 24px;
+    }
+    .radio-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .radio-option {
+      flex: 1;
+      min-width: 100px;
+    }
+    .radio-input {
+      display: none;
+    }
+    .radio-label {
+      display: block;
+      padding: 10px;
+      text-align: center;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .radio-input:checked + .radio-label {
+      border-color: #8a4baf;
+      background-color: #f4ebff;
+      font-weight: 600;
+    }
+    .subject-selector {
+      margin-bottom: 24px;
+    }
+    .subject-dropdown {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 12px;
+      background-color: white;
+      color: #333;
+      transition: border-color 0.3s, background-color 0.3s, color 0.3s;
+    }
+    .info-box {
+      background-color: #f4ebff;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 24px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .time-slots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .time-slot {
+      padding: 12px 8px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      background-color: white;
+    }
+    .time-slot:hover {
+      border-color: #8a4baf;
+      background-color: #f4ebff;
+    }
+    .time-slot.selected {
+      border-color: #8a4baf;
+      background-color: #f4ebff;
+      font-weight: 600;
+    }
+    .time-slot.unavailable {
+      color: #bbb;
+      background-color: #f5f5f5;
+      cursor: not-allowed;
+    }
+    .submit-button {
+      display: block;
+      width: 100%;
+      background-color: #8a4baf;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+    .submit-button:hover {
+      background-color: #7a3a9f;
+    }
+    .price-notice {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 14px;
+      color: #666;
+      transition: color 0.3s;
+    }
+
+    /* Oppdatert upgrade-box */
+    .upgrade-box {
+      background-color: rgba(255, 217, 102, 0.15);
+      border: 1px solid #ffd966;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 24px;
+      text-align: center;
+    }
+    .upgrade-box p {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #333;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .upgrade-button {
+      display: inline-block;
+      background-color: #ffd966;
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .upgrade-button:hover {
+      background-color: #ffd140;
+    }
+
+    /* Dark mode justeringer */
+    .dark-mode .upgrade-box {
+      background-color: rgba(255, 217, 102, 0.1);
+      border-color: #5a5a3a;
+    }
+    .dark-mode .upgrade-box p {
+      color: #eee;
+    }
+    .dark-mode .form-label {
+      color: #eee;
+    }
+    .dark-mode .form-input {
+      background-color: #444;
+      border-color: #555;
+      color: #eee;
+    }
+
+    /* Resten av CSS-en */
+    .payment-methods {
+      display: none;
+      margin-top: 24px;
+      border-top: 1px solid #eee;
+      padding-top: 24px;
+    }
+    .payment-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #333;
+      transition: color 0.3s;
+    }
+    .payment-options {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .payment-option {
+      flex: 1;
+      min-width: 100px;
+    }
+    .payment-input {
+      display: none;
+    }
+    .payment-label {
+      display: block;
+      padding: 12px;
+      text-align: center;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      background-color: white;
+    }
+    .payment-input:checked + .payment-label {
+      border-color: #8a4baf;
+      background-color: #f4ebff;
+      font-weight: 600;
+    }
+    .payment-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .confirmation {
+      display: none;
+      text-align: center;
+      padding: 24px;
+      background-color: #f0fff0;
+      border-radius: 8px;
+      margin-top: 24px;
+      border: 1px solid #a0d8a0;
+    }
+    .confirmation-icon {
+      font-size: 48px;
+      color: #28a745;
+      margin-bottom: 16px;
+    }
+    .confirmation h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+    .confirmation p {
+      color: #555;
+      margin-bottom: 16px;
+    }
+    .confirmation-button {
+      display: inline-block;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* Dark mode styles */
+    .dark-mode {
+      background-color: #222;
+      color: #eee;
+    }
+    .dark-mode .page-title,
+    .dark-mode .section-title,
+    .dark-mode .payment-title {
+      color: #eee;
+    }
+    .dark-mode .booking-section {
+      background-color: #333;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    .dark-mode .radio-label,
+    .dark-mode .time-slot,
+    .dark-mode .payment-label {
+      background-color: #444;
+      border-color: #555;
+      color: #eee;
+    }
+    .dark-mode .radio-input:checked + .radio-label {
+      color: #d9b3ff;
+      border-color: #8a4baf;
+      background-color: #3a2a4a;
+    }
+    .dark-mode .subject-dropdown {
+      background-color: #444;
+      border-color: #555;
+      color: #eee;
+    }
+    .dark-mode .time-slot.unavailable {
+      background-color: #3a3a3a;
+      color: #777;
+    }
+    .dark-mode .info-box {
+      background-color: #3a2a4a;
+      color: #ddd;
+    }
+    .dark-mode .payment-methods {
+      border-top-color: #444;
+    }
+    .dark-mode .confirmation {
+      background-color: rgba(40, 167, 69, 0.1);
+      border-color: #48c774;
+    }
+    .dark-mode .confirmation h3,
+    .dark-mode .confirmation p {
+      color: #eee;
+    }
+
+    /* Responsive design */
+    @media (max-width: 600px) {
+      .time-slots {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .radio-group {
+        flex-direction: column;
+      }
+      .payment-options {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="booking-container">
+    <div class="booking-header">
+      <a href="/hva kunden ser/hjem for bruker/hjem.html" class="back-button">← Tilbake til Hjem</a>
+      <h1 class="page-title">Book en time</h1>
+      <label class="toggle-switch">
+        <input type="checkbox" id="mode-toggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+    
+    <div class="booking-section">
+      <!-- Registreringsskjema -->
+      <h2 class="section-title">Personlige opplysninger</h2>
+      <div class="form-group">
+        <label for="fullname" class="form-label">Fullt navn</label>
+        <input type="text" id="fullname" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">E-post</label>
+        <input type="email" id="email" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label for="phone" class="form-label">Telefon (valgfri)</label>
+        <input type="tel" id="phone" class="form-input">
+      </div>
+
+      <h2 class="section-title">Velg medlemskap</h2>
+      <div class="membership-selector">
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="non-member" name="membership" class="radio-input" checked>
+            <label for="non-member" class="radio-label">Ikke-medlem</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="silver" name="membership" class="radio-input">
+            <label for="silver" class="radio-label">Sølv</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="gold" name="membership" class="radio-input">
+            <label for="gold" class="radio-label">Gull</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="diamond" name="membership" class="radio-input">
+            <label for="diamond" class="radio-label">Diamant</label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="info-box">
+        <p>Som ikke-medlem kan du booke enkelttimer til 199 kr per time. Du får tilgang til våre 20+ grunnkurs med lærer i grupper på 5-8 studenter.</p>
+      </div>
+      
+      <h2 class="section-title">Velg fag</h2>
+      <div class="subject-selector">
+        <select class="subject-dropdown">
+          <option value="" disabled selected>Velg fag</option>
+          <option value="programming">Programmering</option>
+          <option value="mathematics">Matematikk</option>
+          <option value="statistics">Statistikk</option>
+          <option value="chemistry">Organisk kjemi</option>
+          <option value="economics">Økonomisk analyse</option>
+          <option value="physics">Mekanikk</option>
+          <option value="biology">Mikrobiologi</option>
+        </select>
+      </div>
+      
+      <h2 class="section-title">Velg tidspunkt</h2>
+      <div class="time-slots">
+        <div class="time-slot">10:00 - 11:00</div>
+        <div class="time-slot selected">12:00 - 13:00</div>
+        <div class="time-slot">14:00 - 15:00</div>
+        <div class="time-slot unavailable">16:00 - 17:00</div>
+        <div class="time-slot">18:00 - 19:00</div>
+        <div class="time-slot">19:00 - 20:00</div>
+        <div class="time-slot unavailable">20:00 - 21:00</div>
+        <div class="time-slot">21:00 - 22:00</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="notes" class="form-label">Spesielle ønsker (valgfri)</label>
+        <textarea id="notes" class="form-input" rows="3"></textarea>
+      </div>
+
+      <div class="payment-methods" id="payment-section">
+        <h3 class="payment-title">Velg betalingsmetode</h3>
+        <div class="payment-options">
+          <div class="payment-option">
+            <input type="radio" id="credit-card" name="payment" class="payment-input" checked>
+            <label for="credit-card" class="payment-label">
+              <i class="fas fa-credit-card payment-icon"></i>
+              Bankkort
+            </label>
+          </div>
+          <div class="payment-option">
+            <input type="radio" id="paypal" name="payment" class="payment-input">
+            <label for="paypal" class="payment-label">
+              <i class="fab fa-paypal payment-icon"></i>
+              PayPal
+            </label>
+          </div>
+        </div>
+        <button class="submit-button" id="pay-button">Betal nå</button>
+      </div>
+      
+      <div class="confirmation" id="confirmation">
+        <i class="fas fa-check-circle confirmation-icon"></i>
+        <h3>Betaling fullført!</h3>
+        <p>Din time er nå booket. Du vil motta en bekreftelse på e-post.</p>
+        <a href="../hjem/hjem.html" class="confirmation-button">Tilbake til hjemmesiden</a>
+      </div>
+      
+      <!-- Oppdatert upgrade-box -->
+      <div class="upgrade-box">
+        <p><strong>Spar penger med et abonnement!</strong></p>
+        <p>5 enkelttimer koster 995 kr. Med Sølv-abonnement får du opptil 8 timer for kun 999 kr per semester!</p>
+        <p>Diamant-medlemmer får også eksklusive fordeler som én-til-én veiledning og prioritert support.</p>
+        <a href="../priser/priser.html" class="upgrade-button">Se alle abonnementer</a>
+      </div>
+      
+      <button class="submit-button" id="book-button">Ferdigstill booking</button>
+    </div>
+  </div>
+
+  <script>
+    // Dark mode toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.addEventListener('change', function() {
+      document.body.classList.toggle('dark-mode', this.checked);
+    });
+
+    // Simulation of membership selection changing info box
+    document.querySelectorAll('input[name="membership"]').forEach(radio => {
+      radio.addEventListener('change', function() {
+        const infoBox = document.querySelector('.info-box');
+        const priceNotice = document.querySelector('.price-notice');
+        const upgradeBox = document.querySelector('.upgrade-box');
+        
+        if (this.id === 'non-member') {
+          infoBox.innerHTML = '<p>Som ikke-medlem kan du booke enkelttimer til 199 kr per time. Du får tilgang til våre 20+ grunnkurs med lærer i grupper på 5-8 studenter.</p>';
+          priceNotice.textContent = 'Pris: 199 kr for en time';
+          upgradeBox.style.display = 'block';
+        } else if (this.id === 'silver') {
+          infoBox.innerHTML = '<p>Med Sølv-abonnement kan du booke opptil 2 timer per uke. Du har tilgang til 50+ grunnkurs med små grupper på 3-6 studenter.</p><p>Gjenværende timer denne uken: 2</p>';
+          priceNotice.textContent = 'Inkludert i ditt Sølv-abonnement';
+          upgradeBox.style.display = 'none';
+        } else if (this.id === 'gold') {
+          infoBox.innerHTML = '<p>Med Gull-abonnement kan du booke opptil 4 timer per uke. Du har tilgang til 200+ emner med små grupper på 3-5 studenter.</p><p>Gjenværende timer denne uken: 4</p>';
+          priceNotice.textContent = 'Inkludert i ditt Gull-abonnement';
+          upgradeBox.style.display = 'none';
+        } else if (this.id === 'diamond') {
+          infoBox.innerHTML = '<p>Med Diamant-abonnement kan du booke opptil 6 timer per uke. Du har tilgang til 300+ kurs med ekstra små grupper på 2-4 studenter.</p><p>Gjenværende timer denne uken: 6</p>';
+          priceNotice.textContent = 'Inkludert i ditt Diamant-abonnement';
+          upgradeBox.style.display = 'none';
+        }
+      });
+    });
+    
+    // Time slot selection
+    document.querySelectorAll('.time-slot:not(.unavailable)').forEach(slot => {
+      slot.addEventListener('click', function() {
+        document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+        this.classList.add('selected');
+      });
+    });
+
+    // Booking and payment flow
+    const bookButton = document.getElementById('book-button');
+    const payButton = document.getElementById('pay-button');
+    const paymentSection = document.getElementById('payment-section');
+    const confirmation = document.getElementById('confirmation');
+
+    bookButton.addEventListener('click', function() {
+      const fullname = document.getElementById('fullname').value;
+      const email = document.getElementById('email').value;
+      
+      // Validering
+      if (!fullname || !email) {
+        alert('Vennligst fyll ut alle obligatoriske felt (navn og e-post)');
+        return;
+      }
+      
+      if (!validateEmail(email)) {
+        alert('Vennligst skriv inn en gyldig e-postadresse');
+        return;
+      }
+
+      const selectedMembership = document.querySelector('input[name="membership"]:checked').id;
+      
+      if (selectedMembership === 'non-member') {
+        paymentSection.style.display = 'block';
+        bookButton.style.display = 'none';
+      } else {
+        paymentSection.style.display = 'none';
+        bookButton.style.display = 'none';
+        confirmation.style.display = 'block';
+      }
+    });
+
+    payButton.addEventListener('click', function() {
+      paymentSection.style.display = 'none';
+      confirmation.style.display = 'block';
+    });
+
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+  </script>
+</body>
+</html>

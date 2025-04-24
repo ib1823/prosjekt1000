@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontakt BliSikker - vi hjelper deg med alle spørsmål om våre kurs og tjenester">
+    <title>Kontakt Oss – BliSikker</title>
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #a865c9;
+            --primary-hover: #8d42ce;
+            --primary-dark: #6A0DAD;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+            --white: #fff;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Dark Mode Toggle */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 80px;
+            height: 40px;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ddd;
+            border-radius: 40px;
+            transition: 0.4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 34px;
+            width: 34px;
+            left: 3px;
+            bottom: 3px;
+            background: url('sunIcon.png') center/cover no-repeat;
+            background-color: white;
+            border-radius: 50%;
+            transition: 0.4s;
+        }
+
+        input:checked + .slider {
+            background-color: #4B0082;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(38px);
+            background: url('sunPurple.png') center/cover no-repeat;
+            background-color: #4B0082;
+            border-radius: 50%;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+
+        .logo {
+            max-width: 120px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #a671d3;
+            font-weight: bold;
+            transition: color 0.3s, background-color 0.3s, padding 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #4B0082;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .booking-btn {
+            background-color: #a671d3;
+            color: white !important;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .booking-btn:hover {
+            background-color: #8d42ce;
+            color: white !important;
+        }
+/* bruker ikon logo css*/
+/* HEADER LAYOUT */
+header {
+    background-color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 100;
+}
+
+/* Venstresiden av headeren */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 120px;
+    height: auto;
+    margin-right: 25px;
+}
+
+/* Navigasjonsmeny */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #a671d3;
+    font-weight: bold;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #4B0082;
+    color: white;
+}
+
+/* Høyresiden av headeren */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Toggle switch (lys/mørk modus) */
+.toggle-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Brukerprofil og varsling */
+.user-menu-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-icon i {
+    font-size: 1.2rem;
+    color: #a671d3;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff4757;
+    color: white;
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Avatar */
+.user-profile-icon {
+    cursor: pointer;
+    position: relative;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #ffd700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Dropdown meny */
+.user-dropdown {
+    position: absolute;
+    right: 0;
+    top: 55px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    min-width: 220px;
+    display: none;
+    z-index: 1000;
+}
+
+.user-dropdown.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.welcome-text {
+    font-weight: bold;
+    color: #4B0082;
+}
+
+.dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    margin: 8px 0;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    padding: 8px 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f0e6ff;
+    color: #a671d3;
+}
+
+.dropdown-menu li a i {
+    width: 25px;
+    margin-right: 10px;
+    color: #a671d3;
+}
+        /* Contact Page Specific Styles */
+        .page-banner {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page-banner h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .page-banner p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 60px 20px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-col {
+            flex: 1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .required::after {
+            content: " *";
+            color: #e53e3e;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(168, 101, 201, 0.2);
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Contact Info */
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .info-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .info-icon {
+            background-color: rgba(168, 101, 201, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 18px;
+        }
+
+        .info-text h4 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .info-text p {
+            margin: 5px 0 0;
+            color: #666;
+        }
+
+        /* Social Media */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
+
+        .accordion {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .accordion-header {
+            background-color: white;
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .accordion-header h3 {
+            font-size: 1.1rem;
+            margin: 0;
+            color: var(--text-color);
+        }
+
+        .accordion-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .accordion-content {
+            background-color: white;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-content p {
+            padding: 20px 0;
+            margin: 0;
+        }
+
+        .active .accordion-header {
+            background-color: #f0e6f5;
+        }
+
+        .active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .active .accordion-content {
+            max-height: 200px;
+        }
+
+        /* Map */
+        .map-container {
+            height: 400px;
+            margin-top: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-placeholder {
+            background-color: #e9ecef;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #a865c9;
+            padding: 40px 20px;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            flex: 1;
+            text-align: left;
+            padding: 0 15px;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-section p {
+            margin: 5px 0;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-logo {
+            height: 80px;
+            margin-bottom: 15px;
+            filter: brightness(0) invert(1);
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+
+        .dark-mode header {
+            background-color: #333;
+        }
+
+        .dark-mode nav ul li a {
+            color: #ddd;
+        }
+
+        .dark-mode .contact-form,
+        .dark-mode .info-card,
+        .dark-mode .accordion-header,
+        .dark-mode .accordion-content {
+            background-color: #333;
+            color: white;
+        }
+
+        .dark-mode .info-text p {
+            color: #ccc;
+        }
+
+        .dark-mode .accordion-header h3 {
+            color: white;
+        }
+
+        .dark-mode .active .accordion-header {
+            background-color: #4d3b5d;
+        }
+
+        .dark-mode .faq-section {
+            background-color: #2a2a2a;
+        }
+
+        .dark-mode input,
+        .dark-mode textarea,
+        .dark-mode select {
+            background-color: #444;
+            border-color: #555;
+            color: white;
+        }
+
+        .dark-mode input:focus,
+        .dark-mode textarea:focus,
+        .dark-mode select:focus {
+            border-color: var(--primary-color);
+        }
+
+        .dark-mode .map-placeholder {
+            background-color: #444;
+            color: #ddd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+
+            .footer-section {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="/hva kunden ser/hjem for bruker/hjem.html">Hjem</a></li>
+                <li><a href="/hva kunden ser/Fag/fag.html">Kurs</a></li>
+                <li><a href="/hva kunden ser/omoss/omoss.html">Om oss</a></li>
+                <li><a href="/hva kunden ser/Booking/booking.html" class="booking-btn">Book Time</a></li>
+                <li><a href="/hva kunden ser/priser/priser.html">Priser</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="nav-right">
+        <div class="toggle-container">
+            <label class="toggle-switch" title="Bytt til mørk/lys modus">
+                <input type="checkbox" id="mode-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="user-menu-container">
+            <div class="notification-icon">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">1</span>
+            </div>
+            <div class="user-profile-icon" id="userMenuTrigger">
+                <div class="avatar">WQ</div>
+            </div>
+            <div class="user-dropdown" id="userDropdown">
+                <div class="dropdown-header">
+                    <p class="welcome-text">Hei, <?php echo htmlspecialchars($fornavn); ?>!</p>
+                </div>
+                <ul class="dropdown-menu">
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Din læring</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i> Ønskeliste</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> Profil</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Innstillinger</a></li>
+                    <li><a href="#"><i class="fas fa-user-cog"></i> Konto</a></li>
+                    <li><a href="/BliSikker/hjem/hjem.html"><i class="fas fa-sign-out-alt"></i> Logg ut</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h1>Kontakt Oss</h1>
+            <p>Har du spørsmål eller trenger du hjelp? Vi er her for å hjelpe deg med å finne de beste læreressursene for dine behov.</p>
+        </div>
+    </section>
+
+   <!-- Contact Section -->
+<section class="contact-section container">
+    <div class="contact-form">
+        <h2>Send oss en melding</h2>
+        <!-- Endret form action til FormSubmit -->
+        <form id="contact-form" action="https://formsubmit.co/din@epost.no" method="POST">
+            <!-- FormSubmit konfigurasjon -->
+            <input type="hidden" name="_subject" value="Ny henvendelse fra BliSikker">
+            <input type="hidden" name="_next" value="https://blisikker.no/takk">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            
+            <div class="form-row">
+                <div class="form-col">
+                    <label for="first-name" class="required">Fornavn</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
+                <div class="form-col">
+                    <label for="last-name" class="required">Etternavn</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-col">
+                    <label for="email" class="required">E-post</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-col">
+                    <label for="phone" class="required">Telefonnummer</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="subject" class="required">Emne</label>
+                <select id="subject" name="subject" required>
+                    <option value="">Velg et emne</option>
+                    <option value="booking">Booking av timer</option>
+                    <option value="courses">Spørsmål om kurs</option>
+                    <option value="prices">Priser og betalinger</option>
+                    <option value="technical">Teknisk support</option>
+                    <option value="other">Annet</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Adresse</label>
+                <input type="text" id="address" name="address">
+            </div>
+
+            <div class="form-group">
+                <label for="message" class="required">Melding</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit" class="button">Send melding</button>
+        </form>
+    </div>
+
+    <div class="contact-info">
+        <div class="info-card">
+            <h3>Kontaktinformasjon</h3>
+            
+            <div class="info-item">
+                <div class="info-icon">📱</div>
+                <div class="info-text">
+                    <h4>Telefon</h4>
+                    <p>+47 123 45 678</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-icon">✉️</div>
+                <div class="info-text">
+                    <h4>E-post</h4>
+                    <p>kontakt@blisikker.no</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-icon">🏢</div>
+                <div class="info-text">
+                    <h4>Adresse</h4>
+                    <p>Gullbringvegen 36<br>3800 Bø</p>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="info-icon">🕒</div>
+                <div class="info-text">
+                    <h4>Åpningstider</h4>
+                    <p>Mandag - Fredag: 09:00 - 17:00<br>Lørdag: 10:00 - 14:00</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 30px;">Følg oss</h3>
+            <div class="social-links">
+                <a href="#" class="social-link">f</a>
+                <a href="#" class="social-link">in</a>
+                <a href="#" class="social-link">📸</a>
+                <a href="#" class="social-link">🐦</a>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                style="border:0" 
+                src="https://maps.google.com/maps?q=Gullbringvegen+36,Bø&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Vanlige spørsmål</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Hvordan kan jeg bestille en privat time?</h3>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Du kan enkelt bestille en privat time ved å klikke på "Book Time" i navigasjonsmenyen, velge ønsket fag, lærer og tidspunkt som passer for deg. Alternativt kan du kontakte oss direkte via dette kontaktskjemaet.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Hva er deres betalingsbetingelser?</h3>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Vi tilbyr fleksible betalingsalternativer, inkludert betaling per time eller pakketilbud. Betaling kan gjøres via bankkort, Vipps eller faktura. Se vår prisside for mer detaljert informasjon.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Kan jeg avbestille en time?</h3>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Ja, du kan avbestille en time opptil 24 timer før den avtalte tiden uten kostnad. Ved senere avbestilling eller uteblivelse belastes 50% av timekostnaden.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Hvordan velger dere ut lærerne?</h3>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Alle våre lærere gjennomgår en grundig utvelgelsesprosess der vi vurderer deres faglige kvalifikasjoner, pedagogiske evner og erfaring. Vi krever også referanser og politiattest for alle våre lærere.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="footer-logo">
+                <p>© 2025 Bli Sikker. Alle rettigheter reservert.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Bli Sikker</h4>
+                <p><a href="../omoss/omoss.html">Om oss</a></p>
+                <p><a href="KontaktOss.html">Kontakt Oss</a></p>
+                <p><a href="#">Ledige stillinger</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Ressurser</h4>
+                <p><a href="#">Brukervilkår</a></p>
+                <p><a href="#">Personvern</a></p>
+                <p><a href="#">Cookies</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Kom i gang</h4>
+                <p><a href="../Fag/fag.html">Finn kurs</a></p>
+                <p><a href="../priser/priser.html">Priser</a></p>
+                <p><a href="../LoggInn/logginn.html">Logg inn</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggleSwitch = document.getElementById("mode-toggle");
+            const body = document.body;
+
+            // Check for saved dark mode preference
+            const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+            body.classList.toggle("dark-mode", isDarkMode);
+            toggleSwitch.checked = isDarkMode;
+
+            // Toggle dark mode
+            toggleSwitch.addEventListener("change", function() {
+                body.classList.toggle("dark-mode", this.checked);
+                localStorage.setItem("darkMode", this.checked ? "enabled" : "disabled");
+            });
+
+            // Form validation
+            const contactForm = document.getElementById("contact-form");
+            contactForm.addEventListener("submit", function(event) {
+                const phone = document.getElementById("phone").value;
+                // Basic Norwegian phone number validation
+                const phoneRegex = /^(\+47|0047)?[49]\d{7}$/;
+                
+                if (!phoneRegex.test(phone)) {
+                    alert("Vennligst skriv inn et gyldig norsk telefonnummer.");
+                    event.preventDefault();
+                }
+            });
+
+            // FAQ Accordion
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                header.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
