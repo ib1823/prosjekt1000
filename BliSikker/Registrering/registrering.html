@@ -70,14 +70,23 @@
         <img src="BliSikkerLogo (2).png" alt="Bli Sikker Logo" class="logo">
         <h2>Opprett en brukerkonto</h2>
         <form id="registerForm" action="Registrer.php" method="POST">
+            <!-- Nytt valgfelt for brukertype -->
+            <label for="brukertype" style="font-weight: bold; display: block; text-align: left; margin-bottom: 5px;">Jeg er:</label>
+            <select name="brukertype" id="brukertype" class="input-field" required>
+                <option value="" disabled selected>Velg brukertype</option>
+                <option value="student">Student</option>
+                <option value="laerer">Lærer</option>
+            </select>
+        
             <input type="text" name="fornavn" class="input-field" placeholder="Fornavn" required>
             <input type="text" name="etternavn" class="input-field" placeholder="Etternavn" required>
             <input type="email" name="epost" class="input-field" placeholder="E-post" required>
             <input type="password" name="passord" class="input-field" placeholder="Passord" required>
             <input type="password" name="bekreft_passord" class="input-field" placeholder="Bekreft passord" required>
+            
             <button type="submit" class="button">Opprett bruker</button>
         </form>
-        <p>Allerede registrert? <a href="../LoggInn/logginn.html" class="back-link">Logg inn</a></p>
+        
     </div>
 </body>
 </html>
