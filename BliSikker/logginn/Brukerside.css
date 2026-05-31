@@ -216,7 +216,7 @@ nav ul li a:hover {
     background-color: white;
     border-radius: 50%;
     transition: 0.4s;
-    background: white url('sunIcon.png') center/cover no-repeat;
+    background: white url('../assets/images/sunIcon.png') center/cover no-repeat;
 }
 
 input:checked + .slider {
@@ -226,7 +226,7 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(30px);
     background-color: white;
-    background: white url('moonIcon.png') center/cover no-repeat;
+    background: white url('../assets/images/sunPurple.png') center/cover no-repeat;
 }
 
 /* Dashboard layout */
