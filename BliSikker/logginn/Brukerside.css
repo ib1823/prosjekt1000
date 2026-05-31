@@ -226,7 +226,7 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(30px);
     background-color: white;
-    background: white url('moonIcon.png') center/cover no-repeat;
+    background: white url('../assets/images/sunPurple.png') center/cover no-repeat;
 }
 
 /* Dashboard layout */
